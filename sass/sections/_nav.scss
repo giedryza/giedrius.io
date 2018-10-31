@@ -1,0 +1,134 @@
+.nav {
+    @include container;
+
+    background-color: $color-white;
+    margin-top: 2.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__branding {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 1rem;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+    }
+
+    &__item {
+        padding: 1rem;
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+    }
+}
+
+// .nav {
+//     @include container;
+
+//     background-color: $color-white;
+//     margin-top: 2.5rem;
+
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     align-items: center;
+
+//     &__branding {
+//         text-transform: uppercase;
+//         font-size: 1.5rem;
+//         font-weight: 700;
+//         padding: 1rem;
+//     }
+
+//     &__list {
+//         list-style: none;
+//         justify-self: end;
+//         grid-column: 2 / 3;
+//         display: flex;
+//     }
+
+//     &__item {
+//         padding: 1rem;
+//     }
+
+//     &__link {
+//         &:link,
+//         &:visited {
+//             font-size: 1.3rem;
+//             font-weight: 700;
+//             color: #000;
+//             text-transform: uppercase;
+//             text-decoration: none;
+//         }
+//     }
+
+//     &__label {
+//         justify-self: end;
+//         margin-right: 1rem;
+//         display: block;
+//     }
+
+//     // &__hamburger {
+//     //     cursor: pointer;
+//     //     position: relative;
+
+//     //     &,
+//     //     &::before,
+//     //     &::after {
+//     //         display: block;
+//     //         background: #000;
+//     //         width: 2.5rem;
+//     //         height: 2px;
+//     //     }
+//     //     &::before,
+//     //     &::after {
+//     //         content: '';
+//     //         position: absolute;
+//     //     }
+//     //     &::before {
+//     //         top: -0.7rem;
+//     //     }
+//     //     &::after {
+//     //         top: 0.7rem;
+//     //     }
+//     // }
+
+//     &__hamburger {
+//         cursor: pointer;
+//         width: 25px;
+//         position: relative;
+//         display: inline-block;
+//         box-shadow: inset 0 2px 0 black, inset 0 -2px 0 black;
+
+//         &:after {
+//             content: '';
+//             width: 100%;
+//             height: 2px;
+//             background-color: #000;
+//             position: absolute;
+//             top: 7px;
+//             left: 0;
+//         }
+//     }
+
+//     &__input {
+//         display: none;
+//     }
+
+//     &__input:checked ~ &__list {
+//         display: none;
+//     }
+// }

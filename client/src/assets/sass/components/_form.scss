@@ -1,0 +1,30 @@
+.form {
+    max-width: 60rem;
+    margin: auto;
+    padding: 2rem;
+    background-color: $color-white;
+
+    display: flex;
+    flex-direction: column;
+
+    &__input,
+    &__textarea {
+        margin: 1rem;
+        padding: 1rem;
+        font-family: inherit;
+    }
+
+    &__button {
+        margin: 1rem;
+        padding: 1rem;
+        font-family: inherit;
+        font-size: 1.6rem;
+        background-color: $color-grey;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($color-grey, 5%);
+        }
+    }
+}

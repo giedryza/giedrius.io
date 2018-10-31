@@ -1,2 +1,4 @@
-node_modules
-raw
+/node_modules
+/raw
+package-lock.json
+keys_dev.js

@@ -1,0 +1,123 @@
+.card {
+    background-color: $color-white;
+    transition: transform 0.1s;
+
+    &:hover {
+        transform: scale(1.005);
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 2.1rem;
+        font-weight: 500;
+        padding: 1rem;
+    }
+
+    &__date {
+        font-size: 1.2rem;
+        font-weight: 300;
+        padding-right: 1rem;
+    }
+
+    &__img-container {
+        height: 25rem;
+        margin-bottom: 1rem;
+        position: relative;
+
+        &--contacts {
+            height: 35rem;
+        }
+
+        &--about {
+            height: 100%;
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    &__description {
+        padding: 0 1rem 1rem 1rem;
+        font-size: 1.5rem;
+    }
+
+    &__label {
+        font-size: 1.8rem;
+        font-weight: 500;
+        padding: 1rem;
+        border-top: 2px solid $color-grey;
+    }
+
+    &__icons {
+        padding: 0 1rem 1rem 1rem;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+        grid-gap: 1rem;
+
+        &--contacts {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        background-color: $color-grey;
+        padding: 1rem;
+        transition: background-color 0.4s;
+
+        &:link,
+        &:visited {
+            color: #000;
+            text-decoration: none;
+        }
+
+        &:hover,
+        &:active {
+            cursor: pointer;
+            background-color: darken($color-grey, 15%);
+        }
+
+        &--contacts {
+            flex-direction: row;
+            justify-content: start;
+            padding: 0;
+        }
+    }
+
+    &__icon-container:hover &__icon {
+        filter: blur(1px);
+    }
+
+    &__icon {
+        padding: 1.5rem;
+        width: 10rem;
+        height: 10rem;
+
+        &--contacts {
+            padding: 2rem;
+            width: 7rem;
+            height: 7rem;
+        }
+    }
+
+    &__icon-title {
+        font-size: 1.7rem;
+        font-weight: 500;
+    }
+}

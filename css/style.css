@@ -19,16 +19,6 @@ body {
   background-color: #c8c8c8;
   color: #000; }
 
-.about {
-  width: 95%;
-  max-width: 125rem;
-  margin: auto;
-  padding: 5rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
-  grid-gap: 5rem;
-  align-items: start; }
-
 .card {
   background-color: #fff;
   transition: transform 0.1s; }
@@ -103,6 +93,16 @@ body {
   .card__icon-title {
     font-size: 1.7rem;
     font-weight: 500; }
+
+.about {
+  width: 95%;
+  max-width: 125rem;
+  margin: auto;
+  padding: 5rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  grid-gap: 5rem;
+  align-items: start; }
 
 .contacts {
   width: 95%;

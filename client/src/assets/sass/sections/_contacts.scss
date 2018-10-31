@@ -1,0 +1,10 @@
+.contacts {
+    @include container;
+
+    padding: 5rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+    grid-gap: 5rem;
+    align-items: start;
+}
