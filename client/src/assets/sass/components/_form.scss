@@ -23,6 +23,13 @@
         border: none;
         cursor: pointer;
 
+        &:link,
+        &:visited {
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+        }
+
         &:hover {
             background-color: darken($color-grey, 5%);
         }

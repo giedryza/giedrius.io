@@ -34,7 +34,7 @@ router.post(
 // @access  Public
 router.get('/', (req, res) => {
     Portfolio.find()
-        .sort({ date: 1 })
+        .sort({ date: -1 })
         .then(portfolio => res.json(portfolio))
         .catch(err => res.status(404).json(err));
 });

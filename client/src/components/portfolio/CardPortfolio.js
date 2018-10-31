@@ -24,24 +24,39 @@ const CardPortfolio = ({ work }) => {
             <div className="card__icons">{techStack}</div>
             <h4 className="card__label">View at</h4>
             <div className="card__icons">
-                <a
-                    href={work.viewAt.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card__icon-container"
-                >
-                    <Icon name="GitHub" />
-                    <h5 className="card__icon-title">GitHub</h5>
-                </a>
-                <a
-                    href={work.viewAt.youtube}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card__icon-container"
-                >
-                    <Icon name="YouTube" />
-                    <h5 className="card__icon-title">YouTube</h5>
-                </a>
+                {work.web ? (
+                    <a
+                        href={work.web}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="card__icon-container"
+                    >
+                        <Icon name="Chrome" />
+                        <h5 className="card__icon-title">Web</h5>
+                    </a>
+                ) : null}
+                {work.github ? (
+                    <a
+                        href={work.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="card__icon-container"
+                    >
+                        <Icon name="GitHub" />
+                        <h5 className="card__icon-title">GitHub</h5>
+                    </a>
+                ) : null}
+                {work.youtube ? (
+                    <a
+                        href={work.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="card__icon-container"
+                    >
+                        <Icon name="YouTube" />
+                        <h5 className="card__icon-title">YouTube</h5>
+                    </a>
+                ) : null}
             </div>
         </div>
     );

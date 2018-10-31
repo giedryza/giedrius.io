@@ -5,7 +5,9 @@ import TextArea from '../common/TextArea';
 import TextInput from '../common/TextInput';
 import Button from '../common/Button';
 
+import requireAuth from './requireAuth';
 import { addPortfolio } from '../../actions/portfolioActions';
+import { logout } from '../../actions/authActions';
 
 class Add extends Component {
     state = {
@@ -25,7 +27,7 @@ class Add extends Component {
     onSubmit = e => {
         e.preventDefault();
 
-        const data = {
+        const portfolioData = {
             name: this.state.name,
             img: this.state.img,
             description: this.state.description,
@@ -35,7 +37,9 @@ class Add extends Component {
             youtube: this.state.youtube
         };
 
-        this.props.addPortfolio(data);
+        this.props.addPortfolio(portfolioData, () => {
+            this.props.history.push('/portfolio');
+        });
 
         this.setState({
             name: '',
@@ -46,6 +50,11 @@ class Add extends Component {
             github: '',
             youtube: ''
         });
+    };
+
+    onLogoutClick = e => {
+        e.preventDefault();
+        this.props.logout();
     };
 
     render() {
@@ -107,13 +116,23 @@ class Add extends Component {
                         value="Add"
                         className="form__button"
                     />
+
+                    <a
+                        href="/"
+                        className="form__button"
+                        onClick={this.onLogoutClick}
+                    >
+                        Logout
+                    </a>
                 </form>
             </section>
         );
     }
 }
 
-export default connect(
-    null,
-    { addPortfolio }
-)(Add);
+export default requireAuth(
+    connect(
+        null,
+        { addPortfolio, logout }
+    )(Add)
+);

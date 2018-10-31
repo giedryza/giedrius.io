@@ -19,17 +19,32 @@ export const getPortfolio = () => dispatch => {
         );
 };
 
-export const addPortfolio = data => dispatch => {
+export const addPortfolio = (portfolioData, callback) => dispatch => {
     axios
-        .post('/api/portfolio', data)
-        .then(res =>
-            dispatch({
-                type: ADD_PORTFOLIO,
-                payload: res.data
-            })
+        .post('/api/portfolio', portfolioData)
+        .then(
+            res =>
+                dispatch({
+                    type: ADD_PORTFOLIO,
+                    payload: res.data
+                }),
+            callback()
         )
         .catch(err => console.log(err));
 };
+
+// export const addPortfolio = (portfolioData, callback) => async dispatch => {
+//     try {
+//         const response = await axios.post('/api/portfolio', portfolioData);
+//         dispatch({
+//             type: ADD_PORTFOLIO,
+//             payload: response.data
+//         });
+//         callback();
+//     } catch (err) {
+//         console.log(err);
+//     }
+// };
 
 const setLoading = () => {
     return {
