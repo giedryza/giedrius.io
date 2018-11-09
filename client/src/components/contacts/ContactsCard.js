@@ -50,7 +50,7 @@ class ContactsCard extends Component {
 
         return (
             <div className="card">
-                <h3 className="card__title">Let's get in touch</h3>
+                <h3 className="card__title">Contacts</h3>
                 <div className="card__img-container card__img-container--contacts">
                     <img
                         src={imgContacts}
@@ -59,7 +59,7 @@ class ContactsCard extends Component {
                     />
                 </div>
 
-                <h4 className="card__label">Contacts</h4>
+                <h4 className="card__label">Let's get in touch</h4>
                 <div className="card__icons card__icons--contacts">
                     {myContacts}
                 </div>

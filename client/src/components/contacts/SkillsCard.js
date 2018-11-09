@@ -48,9 +48,9 @@ class SkillsCard extends Component {
                     <img src={imgSkills} alt="Skills" className="card__img" />
                 </div>
                 <p className="card__description">{contacts.skills}</p>
-                <h4 className="card__label">Beginner</h4>
+                <h4 className="card__label bt">Beginner</h4>
                 <div className="card__icons">{beginner}</div>
-                <h4 className="card__label">My tools</h4>
+                <h4 className="card__label bt">My tools</h4>
                 <div className="card__icons">{myTools}</div>
             </div>
         );

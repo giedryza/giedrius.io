@@ -15,12 +15,6 @@
         fill: $color-orange;
     }
 
-    &__branding {
-        text-transform: uppercase;
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
     &__list {
         list-style: none;
         display: flex;
@@ -37,7 +31,7 @@
         &:link,
         &:visited {
             padding: 1rem;
-            margin: 0 2px;
+            margin: 2px;
             font-size: 1.3rem;
             font-weight: 700;
             color: $color-text;

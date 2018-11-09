@@ -22,20 +22,11 @@ const CardPortfolio = ({ work }) => {
                 <img src={work.img} alt={work.name} className="card__img" />
             </div>
             <p className="card__description">{work.description}</p>
-            <h4 className="card__label">Tech Stack</h4>
+            <h4 className="card__label bt">Tech Stack</h4>
             <div className="card__icons">{techStack}</div>
-            <h4 className="card__label">View at</h4>
+            <h4 className="card__label bt">View at</h4>
             <div className="card__icons">
                 {work.web ? (
-                    // <a
-                    //     href={work.web}
-                    //     target="_blank"
-                    //     rel="noopener noreferrer"
-                    //     className="card__icon-container"
-                    // >
-                    //     <Icon name="Chrome" />
-                    //     <h5 className="card__icon-title">Web</h5>
-                    // </a>
                     <IconLink href={work.web} iconName="Chrome" label="Web" />
                 ) : null}
                 {work.github ? (
