@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import IconLink from '../common/IconLink';
+import imgContacts from '../../assets/img/contacts_contacts.png';
 
 class ContactsCard extends Component {
     state = {
@@ -37,16 +38,6 @@ class ContactsCard extends Component {
         const { contacts } = this.state;
 
         const myContacts = contacts.map(contact => (
-            // <a
-            //     href={contact.link}
-            //     target="_blank"
-            //     rel="noopener noreferrer"
-            //     key={contact.icon}
-            //     className="card__icon-container card__icon-container--contacts"
-            // >
-            //     <Icon name={contact.icon} className="card__icon--contacts" />
-            //     <h5 className="card__icon-title">{contact.label}</h5>
-            // </a>
             <IconLink
                 key={contact.icon}
                 href={contact.link}
@@ -62,8 +53,8 @@ class ContactsCard extends Component {
                 <h3 className="card__title">Let's get in touch</h3>
                 <div className="card__img-container card__img-container--contacts">
                     <img
-                        src="img/contacts_me.jpg"
-                        alt="Desktop App"
+                        src={imgContacts}
+                        alt="Contacts"
                         className="card__img"
                     />
                 </div>

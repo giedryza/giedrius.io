@@ -5,16 +5,14 @@ import store from './store';
 import setAuthToken from './utils/setAuthToken';
 import './assets/sass/main.scss';
 
-import Nav from './components/layout/Nav';
+import Nav from './components/nav/Nav';
 import Landing from './components/landing/Landing';
 import Portfolio from './components/portfolio/Portfolio';
-import Contacts from './components/contacts/Contacts';
 import About from './components/about/About';
-import Add from './components/admin/Add';
+import Contacts from './components/contacts/Contacts';
 import Login from './components/admin/Login';
+import Add from './components/admin/Add';
 import NotFound from './components/common/NotFound';
-
-import NavBar from './components/nav/NavBar';
 
 class App extends Component {
     componentDidMount() {
@@ -26,8 +24,7 @@ class App extends Component {
             <Provider store={store}>
                 <BrowserRouter>
                     <div className="App">
-                        <NavBar />
-                        {/* <Nav /> */}
+                        <Nav />
                         <Switch>
                             <Route exact path="/" component={Landing} />
                             <Route

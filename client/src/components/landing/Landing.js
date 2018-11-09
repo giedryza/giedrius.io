@@ -19,9 +19,11 @@ const Landing = () => {
                     And I am available for a job
                 </p>
                 <Link to="/contacts">
-                    <button class="landing__btn">
-                        <span class="landing__btn--visible">Hire me</span>
-                        <span class="landing__btn--invisible">Contacts</span>
+                    <button className="landing__btn">
+                        <span className="landing__btn--visible">Hire me</span>
+                        <span className="landing__btn--invisible">
+                            Contacts
+                        </span>
                     </button>
                 </Link>
             </div>

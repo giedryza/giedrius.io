@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Icon from '../common/Icon';
 import { contacts } from '../../utils/texts';
-import imgSkills from '../../assets/img/contacts_skills.jpg';
+import imgSkills from '../../assets/img/contacts_skills.png';
 
 class SkillsCard extends Component {
     state = {
@@ -45,11 +45,7 @@ class SkillsCard extends Component {
             <div className="card">
                 <h3 className="card__title">Skills</h3>
                 <div className="card__img-container card__img-container--contacts">
-                    <img
-                        src={imgSkills}
-                        alt="Desktop App"
-                        className="card__img"
-                    />
+                    <img src={imgSkills} alt="Skills" className="card__img" />
                 </div>
                 <p className="card__description">{contacts.skills}</p>
                 <h4 className="card__label">Beginner</h4>

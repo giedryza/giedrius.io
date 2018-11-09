@@ -123,5 +123,9 @@
 
     &--landscape {
         grid-column: span 2;
+
+        @media only screen and (max-width: $bp-small) {
+            grid-column: span 1;
+        }
     }
 }
