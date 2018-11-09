@@ -3,6 +3,7 @@
     margin: auto;
     padding: 2rem;
     background-color: $color-white;
+    text-align: center;
 
     display: flex;
     flex-direction: column;
@@ -27,7 +28,7 @@
         &:visited {
             text-align: center;
             text-decoration: none;
-            color: #000;
+            color: $color-text;
         }
 
         &:hover {

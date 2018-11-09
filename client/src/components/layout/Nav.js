@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import Icon from '../common/Icon';
 
@@ -8,7 +8,9 @@ const Nav = () => {
         <nav className="nav">
             <div className="nav__list">
                 <Icon name="Code" className="nav__icon" />
-                <div className="nav__branding">Giedrius Blažulionis</div>
+                <Link to="/" className="nav__link nav__link--branding">
+                    Giedrius Blažulionis
+                </Link>
             </div>
 
             <ul className="nav__list">

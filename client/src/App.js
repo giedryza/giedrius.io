@@ -2,24 +2,34 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
+import setAuthToken from './utils/setAuthToken';
 import './assets/sass/main.scss';
 
 import Nav from './components/layout/Nav';
+import Landing from './components/landing/Landing';
 import Portfolio from './components/portfolio/Portfolio';
 import Contacts from './components/contacts/Contacts';
 import About from './components/about/About';
 import Add from './components/admin/Add';
 import Login from './components/admin/Login';
+import NotFound from './components/common/NotFound';
+
+import NavBar from './components/nav/NavBar';
 
 class App extends Component {
+    componentDidMount() {
+        setAuthToken(localStorage.token);
+    }
+
     render() {
         return (
             <Provider store={store}>
                 <BrowserRouter>
                     <div className="App">
-                        <Nav />
+                        <NavBar />
+                        {/* <Nav /> */}
                         <Switch>
-                            <Route exact path="/" component={Portfolio} />
+                            <Route exact path="/" component={Landing} />
                             <Route
                                 exact
                                 path="/portfolio"
@@ -33,6 +43,7 @@ class App extends Component {
                             />
                             <Route exact path="/admin" component={Add} />
                             <Route exact path="/login" component={Login} />
+                            <Route component={NotFound} />
                         </Switch>
                     </div>
                 </BrowserRouter>

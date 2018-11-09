@@ -1,0 +1,83 @@
+.landing {
+    @include container;
+
+    padding: 2.5rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+    grid-gap: 5rem;
+
+    &__card {
+        background-color: $color-white;
+
+        transition: transform 0.1s;
+
+        &:first-of-type {
+            padding: 5rem;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+        }
+    }
+
+    &__header {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    &__span {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $color-orange;
+    }
+
+    &__img {
+        width: 75%;
+        float: right;
+    }
+
+    &__btn {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+        background: $color-orange;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        & > * {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        &--visible {
+            padding: 1rem 4rem;
+        }
+
+        &--invisible {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            padding: 1rem;
+        }
+
+        &:hover &--visible {
+            transform: translateY(100%);
+        }
+
+        &:hover &--invisible {
+            top: 0;
+        }
+    }
+}

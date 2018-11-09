@@ -38,7 +38,6 @@ class Login extends Component {
             <section className="admin">
                 <form onSubmit={this.onSubmit} className="form">
                     <TextInput
-                        className="form__input"
                         placeholder="email"
                         type="email"
                         name="email"
@@ -46,7 +45,6 @@ class Login extends Component {
                         onChange={this.onChange}
                     />
                     <TextInput
-                        className="form__input"
                         placeholder="password"
                         type="password"
                         name="password"
@@ -54,11 +52,7 @@ class Login extends Component {
                         onChange={this.onChange}
                     />
 
-                    <Button
-                        type="submit"
-                        value="Login"
-                        className="form__button"
-                    />
+                    <Button type="submit" value="Login" />
                 </form>
             </section>
         );

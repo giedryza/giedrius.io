@@ -20,7 +20,7 @@ class Portfolio extends Component {
             portfolioContent = <h5>Portfolio is empty</h5>;
         } else {
             portfolioContent = works.map(work => (
-                <CardPortfolio key={work.id} work={work} />
+                <CardPortfolio key={work._id} work={work} />
             ));
         }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Icon from '../common/Icon';
+import IconLink from '../common/IconLink';
 
 class ContactsCard extends Component {
     state = {
@@ -37,15 +37,24 @@ class ContactsCard extends Component {
         const { contacts } = this.state;
 
         const myContacts = contacts.map(contact => (
-            <a
+            // <a
+            //     href={contact.link}
+            //     target="_blank"
+            //     rel="noopener noreferrer"
+            //     key={contact.icon}
+            //     className="card__icon-container card__icon-container--contacts"
+            // >
+            //     <Icon name={contact.icon} className="card__icon--contacts" />
+            //     <h5 className="card__icon-title">{contact.label}</h5>
+            // </a>
+            <IconLink
+                key={contact.icon}
                 href={contact.link}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="card__icon-container card__icon-container--contacts"
-            >
-                <Icon name={contact.icon} className="card__icon--contacts" />
-                <h5 className="card__icon-title">{contact.label}</h5>
-            </a>
+                iconName={contact.icon}
+                iconClassName="card__icon--contacts"
+                label={contact.label}
+            />
         ));
 
         return (
@@ -58,9 +67,7 @@ class ContactsCard extends Component {
                         className="card__img"
                     />
                 </div>
-                <p className="card__description">
-                    Looking forward to hearing from you!
-                </p>
+
                 <h4 className="card__label">Contacts</h4>
                 <div className="card__icons card__icons--contacts">
                     {myContacts}

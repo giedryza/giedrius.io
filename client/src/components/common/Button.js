@@ -11,8 +11,8 @@ const Button = ({ className, type, value, onClick }) => {
     );
 };
 
-// Button.defaultProps = {
-//     className: 'button'
-// };
+Button.defaultProps = {
+    className: 'form__button'
+};
 
 export default Button;

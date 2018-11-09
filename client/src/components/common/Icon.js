@@ -13,7 +13,7 @@ import { ReactComponent as JavaScript } from '../../assets/svg/javascript.svg';
 import { ReactComponent as Messenger } from '../../assets/svg/messenger.svg';
 import { ReactComponent as Mobile } from '../../assets/svg/mobile.svg';
 import { ReactComponent as MongoDB } from '../../assets/svg/mongodb.svg';
-import { ReactComponent as Node } from '../../assets/svg/node.svg';
+import { ReactComponent as NodeJS } from '../../assets/svg/node.svg';
 import { ReactComponent as Photoshop } from '../../assets/svg/photoshop.svg';
 import { ReactComponent as ReactJS } from '../../assets/svg/react.svg';
 import { ReactComponent as Redux } from '../../assets/svg/redux.svg';
@@ -51,8 +51,8 @@ const Icon = props => {
             return <Mobile {...props} />;
         case 'MongoDB':
             return <MongoDB {...props} />;
-        case 'Node':
-            return <Node {...props} />;
+        case 'NodeJS':
+            return <NodeJS {...props} />;
         case 'Photoshop':
             return <Photoshop {...props} />;
         case 'ReactJS':

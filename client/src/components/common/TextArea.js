@@ -13,4 +13,8 @@ const TextArea = ({ name, placeholder, value, className, onChange }) => {
     );
 };
 
+TextArea.defaultProps = {
+    className: 'form__textarea'
+};
+
 export default TextArea;

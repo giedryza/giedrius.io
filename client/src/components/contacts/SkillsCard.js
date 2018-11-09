@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import Icon from '../common/Icon';
+import { contacts } from '../../utils/texts';
+import imgSkills from '../../assets/img/contacts_skills.jpg';
 
 class SkillsCard extends Component {
     state = {
@@ -12,18 +14,18 @@ class SkillsCard extends Component {
                 'JavaScript',
                 'ReactJS',
                 'Redux',
-                'Node',
+                'NodeJS',
                 'Express',
                 'MongoDB',
                 'Photoshop',
                 'Handlebars'
             ]
         },
-        stack: ['VSCode', 'Chrome', 'Windows']
+        tools: ['VSCode', 'Chrome', 'Windows']
     };
 
     render() {
-        const { skills, stack } = this.state;
+        const { skills, tools } = this.state;
 
         const beginner = skills.beginner.map(skill => (
             <div key={skill} className="card__icon-container">
@@ -32,7 +34,7 @@ class SkillsCard extends Component {
             </div>
         ));
 
-        const myStack = stack.map(tool => (
+        const myTools = tools.map(tool => (
             <div key={tool} className="card__icon-container">
                 <Icon name={tool} />
                 <h5 className="card__icon-title">{tool}</h5>
@@ -44,18 +46,16 @@ class SkillsCard extends Component {
                 <h3 className="card__title">Skills</h3>
                 <div className="card__img-container card__img-container--contacts">
                     <img
-                        src="img/portfolio_desktop-app.jpg"
+                        src={imgSkills}
                         alt="Desktop App"
                         className="card__img"
                     />
                 </div>
-                <p className="card__description">
-                    Looking forward to hearing from you!
-                </p>
+                <p className="card__description">{contacts.skills}</p>
                 <h4 className="card__label">Beginner</h4>
                 <div className="card__icons">{beginner}</div>
-                <h4 className="card__label">My stack</h4>
-                <div className="card__icons">{myStack}</div>
+                <h4 className="card__label">My tools</h4>
+                <div className="card__icons">{myTools}</div>
             </div>
         );
     }

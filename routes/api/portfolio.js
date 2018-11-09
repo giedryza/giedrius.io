@@ -10,7 +10,7 @@ const Portfolio = require('../../models/Portfolio');
 // @access  Private
 router.post(
     '/',
-    // passport.authenticate('jwt', { session: false }),
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const newPortfolio = new Portfolio({
             name: req.body.name,

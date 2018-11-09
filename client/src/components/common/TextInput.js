@@ -14,7 +14,8 @@ const TextInput = ({ name, type, value, placeholder, className, onChange }) => {
 };
 
 TextInput.defaultProps = {
-    type: 'text'
+    type: 'text',
+    className: 'form__input'
 };
 
 export default TextInput;

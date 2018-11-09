@@ -5,7 +5,7 @@ import TextArea from '../common/TextArea';
 import TextInput from '../common/TextInput';
 import Button from '../common/Button';
 
-import requireAuth from './requireAuth';
+import requireAuth from '../../utils/requireAuth';
 import { addPortfolio } from '../../actions/portfolioActions';
 import { logout } from '../../actions/authActions';
 
@@ -40,16 +40,6 @@ class Add extends Component {
         this.props.addPortfolio(portfolioData, () => {
             this.props.history.push('/portfolio');
         });
-
-        this.setState({
-            name: '',
-            img: '',
-            description: '',
-            techStack: '',
-            web: '',
-            github: '',
-            youtube: ''
-        });
     };
 
     onLogoutClick = e => {
@@ -62,60 +52,49 @@ class Add extends Component {
             <section className="admin">
                 <form onSubmit={this.onSubmit} className="form">
                     <TextInput
-                        className="form__input"
                         placeholder="name"
                         name="name"
                         value={this.state.name}
                         onChange={this.onChange}
                     />
                     <TextInput
-                        className="form__input"
                         placeholder="img"
                         name="img"
                         value={this.state.img}
                         onChange={this.onChange}
                     />
                     <TextArea
-                        className="form__textarea"
                         placeholder="description"
                         name="description"
                         value={this.state.description}
                         onChange={this.onChange}
                     />
                     <TextInput
-                        className="form__input"
                         placeholder="techStack"
                         name="techStack"
                         value={this.state.techStack}
                         onChange={this.onChange}
                     />
                     <TextInput
-                        className="form__input"
                         placeholder="web"
                         name="web"
                         value={this.state.web}
                         onChange={this.onChange}
                     />
                     <TextInput
-                        className="form__input"
                         placeholder="github"
                         name="github"
                         value={this.state.github}
                         onChange={this.onChange}
                     />
                     <TextInput
-                        className="form__input"
                         placeholder="youtube"
                         name="youtube"
                         value={this.state.youtube}
                         onChange={this.onChange}
                     />
 
-                    <Button
-                        type="submit"
-                        value="Add"
-                        className="form__button"
-                    />
+                    <Button type="submit" value="Add" />
 
                     <a
                         href="/"

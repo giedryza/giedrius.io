@@ -1,6 +1,8 @@
 import React from 'react';
+import format from 'date-fns/format';
 
 import Icon from '../common/Icon';
+import IconLink from '../common/IconLink';
 
 const CardPortfolio = ({ work }) => {
     const techStack = work.techStack.map(item => (
@@ -14,7 +16,7 @@ const CardPortfolio = ({ work }) => {
         <div className="card">
             <div className="card__header">
                 <h3 className="card__title">{work.name}</h3>
-                <p className="card__date">{work.date}</p>
+                <p className="card__date">{format(work.date, 'YYYY')}</p>
             </div>
             <div className="card__img-container">
                 <img src={work.img} alt={work.name} className="card__img" />
@@ -25,37 +27,30 @@ const CardPortfolio = ({ work }) => {
             <h4 className="card__label">View at</h4>
             <div className="card__icons">
                 {work.web ? (
-                    <a
-                        href={work.web}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="card__icon-container"
-                    >
-                        <Icon name="Chrome" />
-                        <h5 className="card__icon-title">Web</h5>
-                    </a>
+                    // <a
+                    //     href={work.web}
+                    //     target="_blank"
+                    //     rel="noopener noreferrer"
+                    //     className="card__icon-container"
+                    // >
+                    //     <Icon name="Chrome" />
+                    //     <h5 className="card__icon-title">Web</h5>
+                    // </a>
+                    <IconLink href={work.web} iconName="Chrome" label="Web" />
                 ) : null}
                 {work.github ? (
-                    <a
+                    <IconLink
                         href={work.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="card__icon-container"
-                    >
-                        <Icon name="GitHub" />
-                        <h5 className="card__icon-title">GitHub</h5>
-                    </a>
+                        iconName="GitHub"
+                        label="GitHub"
+                    />
                 ) : null}
                 {work.youtube ? (
-                    <a
+                    <IconLink
                         href={work.youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="card__icon-container"
-                    >
-                        <Icon name="YouTube" />
-                        <h5 className="card__icon-title">YouTube</h5>
-                    </a>
+                        iconName="YouTube"
+                        label="YouTube"
+                    />
                 ) : null}
             </div>
         </div>
