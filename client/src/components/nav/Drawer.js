@@ -2,10 +2,10 @@ import React from 'react';
 
 import Links from './Links';
 
-const SideDrawer = ({ show, drawerClose }) => {
-    let drawerClass = 'side-drawer';
+const Drawer = ({ show, drawerClose }) => {
+    let drawerClass = 'drawer';
     if (show) {
-        drawerClass = 'side-drawer open';
+        drawerClass = 'drawer open';
     }
 
     return (
@@ -15,4 +15,4 @@ const SideDrawer = ({ show, drawerClose }) => {
     );
 };
 
-export default SideDrawer;
+export default Drawer;

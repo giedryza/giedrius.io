@@ -5,7 +5,7 @@ import store from './store';
 import setAuthToken from './utils/setAuthToken';
 import './assets/sass/main.scss';
 
-import Nav from './components/nav/Nav';
+import Nav from './components/nav';
 import Landing from './components/landing/Landing';
 import Portfolio from './components/portfolio/Portfolio';
 import About from './components/about/About';

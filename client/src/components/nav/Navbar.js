@@ -5,7 +5,7 @@ import MenuButton from './MenuButton';
 import Links from './Links';
 import Icon from '../common/Icon';
 
-const Toolbar = ({ drawerToggle }) => {
+const Navbar = ({ drawerToggle }) => {
     return (
         <nav className="nav">
             <div className="nav__list">
@@ -15,7 +15,7 @@ const Toolbar = ({ drawerToggle }) => {
                 </Link>
             </div>
 
-            <div className="toolbar">
+            <div className="navbar">
                 <Links />
             </div>
 
@@ -24,4 +24,4 @@ const Toolbar = ({ drawerToggle }) => {
     );
 };
 
-export default Toolbar;
+export default Navbar;
