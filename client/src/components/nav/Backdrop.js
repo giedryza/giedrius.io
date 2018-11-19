@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Backdrop = ({ drawerClose }) => {
-    return <div className="backdrop" onClick={drawerClose} />;
+const Backdrop = ({ onClick }) => {
+    return <div className="backdrop" onClick={onClick} />;
 };
 
 export default Backdrop;

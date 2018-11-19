@@ -15,18 +15,14 @@ class Nav extends Component {
         });
     };
 
-    drawerClose = () => {
-        this.setState({ drawerOpen: false });
-    };
-
     render() {
         const { drawerOpen } = this.state;
 
         return (
             <>
                 <Navbar drawerToggle={this.drawerToggle} />
-                <Drawer show={drawerOpen} drawerClose={this.drawerClose} />
-                {drawerOpen && <Backdrop drawerClose={this.drawerClose} />}
+                <Drawer show={drawerOpen} drawerClose={this.drawerToggle} />
+                {drawerOpen && <Backdrop onClick={this.drawerToggle} />}
             </>
         );
     }

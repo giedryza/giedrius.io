@@ -47,42 +47,11 @@
         float: right;
     }
 
-    &__btn {
-        font-family: inherit;
-        font-size: 1.7rem;
-        font-weight: 700;
-        color: #fff;
-        text-transform: uppercase;
-        background: $color-orange;
-        border: none;
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-
-        & > * {
-            display: inline-block;
-            height: 100%;
-            width: 100%;
-            transition: all 0.2s;
-        }
-
-        &--visible {
-            padding: 1rem 4rem;
-        }
-
-        &--invisible {
-            position: absolute;
-            top: -100%;
-            left: 0;
-            padding: 1rem;
-        }
-
-        &:hover &--visible {
-            transform: translateY(100%);
-        }
-
-        &:hover &--invisible {
-            top: 0;
-        }
+    .card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 15;
     }
 }

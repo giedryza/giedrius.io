@@ -50,6 +50,8 @@ class Add extends Component {
     render() {
         return (
             <section className="admin">
+                <div className="card">a</div>
+
                 <form onSubmit={this.onSubmit} className="form">
                     <TextInput
                         placeholder="name"
