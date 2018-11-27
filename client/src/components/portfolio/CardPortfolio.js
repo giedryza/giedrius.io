@@ -16,15 +16,25 @@ const CardPortfolio = ({ work }) => {
         <div className="card">
             <div className="card__header">
                 <h3 className="card__title">{work.name}</h3>
-                <p className="card__date">{format(work.date, 'YYYY')}</p>
+                <p className="card__date">{format(work.date, 'YYYY-MM')}</p>
             </div>
             <div className="card__img-container">
                 <img src={work.img} alt={work.name} className="card__img" />
             </div>
+            <div className="card__btn-container">
+                <a href="/" className="card__btn">
+                    <Icon name="Web" className="card__btn-icon" />
+                    Web
+                </a>
+                <a href="/" className="card__btn">
+                    <Icon name="GitHub" className="card__btn-icon" />
+                    GitHub
+                </a>
+            </div>
             <p className="card__description">{work.description}</p>
-            <h4 className="card__label bt">Tech Stack</h4>
+            <h4 className="card__label">Tech Stack</h4>
             <div className="card__icons">{techStack}</div>
-            <h4 className="card__label bt">View at</h4>
+            {/* <h4 className="card__label bt">View at</h4>
             <div className="card__icons">
                 {work.web ? (
                     <IconLink href={work.web} iconName="Chrome" label="Web" />
@@ -43,7 +53,7 @@ const CardPortfolio = ({ work }) => {
                         label="YouTube"
                     />
                 ) : null}
-            </div>
+            </div> */}
         </div>
     );
 };

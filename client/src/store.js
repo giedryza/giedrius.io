@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
 const initialState = {
-    auth: { authenticated: localStorage.getItem('token') }
+    auth: { token: localStorage.getItem('token') }
 };
 
 const middleware = [thunk];

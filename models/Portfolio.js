@@ -19,12 +19,10 @@ const PortfolioSchema = new Schema({
         required: true
     },
     web: {
-        type: String
+        type: String,
+        required: true
     },
     github: {
-        type: String
-    },
-    youtube: {
         type: String
     },
     date: {

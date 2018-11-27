@@ -1,8 +1,12 @@
 import axios from 'axios';
-import { GET_PORTFOLIO, ADD_PORTFOLIO, SET_LOADING } from './types';
+import {
+    GET_PORTFOLIO,
+    ADD_PORTFOLIO,
+    EDIT_PORTFOLIO,
+    DELETE_PORTFOLIO
+} from './types';
 
 export const getPortfolio = () => dispatch => {
-    dispatch(setLoading());
     axios
         .get('/api/portfolio')
         .then(res =>
@@ -19,16 +23,40 @@ export const getPortfolio = () => dispatch => {
         );
 };
 
-export const addPortfolio = (portfolioData, callback) => dispatch => {
+export const addPortfolio = (dataToSubmit, cb) => dispatch => {
     axios
-        .post('/api/portfolio', portfolioData)
-        .then(
-            res =>
-                dispatch({
-                    type: ADD_PORTFOLIO,
-                    payload: res.data
-                }),
-            callback()
+        .post('/api/portfolio', dataToSubmit)
+        .then(res =>
+            dispatch({
+                type: ADD_PORTFOLIO,
+                payload: res.data
+            })
+        )
+        .then(cb())
+        .catch(err => console.log(err));
+};
+
+export const editPortfolio = (dataToSubmit, id, cb) => dispatch => {
+    axios
+        .patch(`/api/portfolio/${id}`, dataToSubmit)
+        .then(res =>
+            dispatch({
+                type: EDIT_PORTFOLIO,
+                payload: res.data
+            })
+        )
+        .then(cb())
+        .catch(err => console.log(err));
+};
+
+export const deletePortfolio = id => dispatch => {
+    axios
+        .delete(`/api/portfolio/${id}`)
+        .then(res =>
+            dispatch({
+                type: DELETE_PORTFOLIO,
+                payload: id
+            })
         )
         .catch(err => console.log(err));
 };
@@ -45,9 +73,3 @@ export const addPortfolio = (portfolioData, callback) => dispatch => {
 //         console.log(err);
 //     }
 // };
-
-const setLoading = () => {
-    return {
-        type: SET_LOADING
-    };
-};

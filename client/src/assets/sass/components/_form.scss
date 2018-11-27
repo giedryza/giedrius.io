@@ -1,18 +1,64 @@
 .form {
-    // max-width: 60rem;
-    // margin: auto;
-    // padding: 2rem;
-    // text-align: center;
-    background-color: $color-white;
+    // background-color: $color-white;
 
     display: flex;
     flex-direction: column;
 
-    &__input,
-    &__textarea {
-        margin: 1rem;
+    &__block {
+        padding: 1rem;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
         padding: 1rem;
         font-family: inherit;
+        font-size: 1.3rem;
+    }
+
+    &__label {
+        display: inline-block;
+        font-size: 1.3rem;
+        font-weight: 700;
+        background-color: $color-grey;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__dropzone {
+        margin-right: 2.5rem;
+
+        &-container {
+            display: flex;
+            align-items: center;
+            margin: 1rem;
+        }
+
+        &-preview {
+            width: 10rem;
+            height: 10rem;
+            cursor: pointer;
+        }
+
+        &-icon {
+            display: block;
+            width: 10rem;
+            height: 10rem;
+            padding: 1.5rem;
+            cursor: pointer;
+            background-color: $color-grey;
+            transition: 0.2s ease-out;
+
+            &:hover {
+                background-color: darken($color-grey, 5%);
+            }
+        }
+    }
+
+    &__error {
+        color: $color-error;
+        font-size: 1.3rem;
+        margin-left: 1rem;
     }
 
     &__button {
@@ -20,8 +66,10 @@
         padding: 1rem;
         font-family: inherit;
         font-size: 1.6rem;
+        font-weight: 700;
         background-color: $color-grey;
         border: none;
+        transition: 0.2s ease-out;
         cursor: pointer;
 
         &:link,

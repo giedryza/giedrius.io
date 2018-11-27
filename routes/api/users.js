@@ -11,49 +11,47 @@ const User = require('../../models/User');
 // @route   POST api/users/register
 // @desc    Register User
 // @access  Public
-router.post('/register', (req, res) => {
-    const errors = {};
+// router.post('/register', (req, res) => {
+//     const errors = {};
 
-    User.findOne({ email: req.body.email })
-        .then(user => {
-            if (user) {
-                errors.email = 'Email exists';
-                return res.status(400).json(errors);
-            } else {
-                const newUser = new User({
-                    email: req.body.email,
-                    password: req.body.password
-                });
+//     User.findOne({ email: req.body.email })
+//         .then(user => {
+//             if (user) {
+//                 errors.email = 'Email exists';
+//                 return res.status(400).json(errors);
+//             } else {
+//                 const newUser = new User({
+//                     email: req.body.email,
+//                     password: req.body.password
+//                 });
 
-                bcrypt.genSalt(10, (err, salt) => {
-                    bcrypt.hash(newUser.password, salt, (err, hash) => {
-                        if (err) throw err;
-                        newUser.password = hash;
-                        newUser
-                            .save()
-                            .then(user => res.json(user))
-                            .catch(err => res.status(404).json(err));
-                    });
-                });
-            }
-        })
-        .catch(err => res.status(400).json(err));
-});
+//                 bcrypt.genSalt(10, (err, salt) => {
+//                     bcrypt.hash(newUser.password, salt, (err, hash) => {
+//                         if (err) throw err;
+//                         newUser.password = hash;
+//                         newUser
+//                             .save()
+//                             .then(user => res.json(user))
+//                             .catch(err => res.status(404).json(err));
+//                     });
+//                 });
+//             }
+//         })
+//         .catch(err => res.status(400).json(err));
+// });
 
 // @route   GET api/users/login
 // @desc    Login User / Return JWT Token
 // @access  Public
 router.post('/login', (req, res) => {
     const errors = {};
-
-    const email = req.body.email;
-    const password = req.body.password;
+    const { email, password } = req.body;
 
     User.findOne({ email })
         .then(user => {
             // Check for user
             if (!user) {
-                errors.email = 'User not found';
+                errors.errorMessage = 'User not found';
                 return res.status(404).json(errors);
             }
 
@@ -75,13 +73,13 @@ router.post('/login', (req, res) => {
                             { expiresIn: '7d' },
                             (err, token) => {
                                 res.json({
-                                    success: true,
+                                    loginSuccess: true,
                                     token: 'Bearer ' + token
                                 });
                             }
                         );
                     } else {
-                        errors.password = 'Password incorrect';
+                        errors.errorMessage = 'Password incorrect';
                         return res.status(400).json(errors);
                     }
                 })
@@ -89,29 +87,5 @@ router.post('/login', (req, res) => {
         })
         .catch(err => res.status(400).json(err));
 });
-
-// @route   GET api/users/me
-// @desc    Return current user
-// @access  Private
-router.get(
-    '/me',
-    passport.authenticate('jwt', { session: false }),
-    (req, res) => {
-        res.json(req.user);
-    }
-);
-
-// @route   DELETE api/users
-// @desc    Delete User
-// @access  Private
-router.delete(
-    '/',
-    passport.authenticate('jwt', { session: false }),
-    (req, res) => {
-        User.findOneAndRemove({ _id: req.user.id })
-            .then(() => res.json({ success: true }))
-            .catch(err => res.status(404).json(err));
-    }
-);
 
 module.exports = router;

@@ -1,16 +1,15 @@
 import { AUTH_USER } from '../actions/types';
 
 const initialState = {
-    authenticated: ''
+    token: null,
+    loginSuccess: false,
+    errorMessage: ''
 };
 
 export default function(state = initialState, action) {
     switch (action.type) {
         case AUTH_USER:
-            return {
-                ...state,
-                authenticated: action.payload
-            };
+            return action.payload;
 
         default:
             return state;

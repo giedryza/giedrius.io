@@ -7,7 +7,7 @@ import Icon from '../common/Icon';
 
 const Navbar = ({ drawerToggle }) => {
     return (
-        <nav className="nav">
+        <header className="nav">
             <div className="nav__list">
                 <Icon name="Code" className="nav__icon" />
                 <Link to="/" className="nav__link nav__link--branding">
@@ -15,12 +15,12 @@ const Navbar = ({ drawerToggle }) => {
                 </Link>
             </div>
 
-            <div className="navbar">
+            <nav className="navbar">
                 <Links />
-            </div>
+            </nav>
 
             <MenuButton drawerToggle={drawerToggle} />
-        </nav>
+        </header>
     );
 };
 

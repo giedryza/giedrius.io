@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactComponent as Avatar } from '../../assets/svg/avatar.svg';
 import { ReactComponent as Chrome } from '../../assets/svg/chrome.svg';
 import { ReactComponent as Code } from '../../assets/svg/code.svg';
 import { ReactComponent as CSS3 } from '../../assets/svg/css3.svg';
@@ -18,59 +19,67 @@ import { ReactComponent as Photoshop } from '../../assets/svg/photoshop.svg';
 import { ReactComponent as ReactJS } from '../../assets/svg/react.svg';
 import { ReactComponent as Redux } from '../../assets/svg/redux.svg';
 import { ReactComponent as Sass } from '../../assets/svg/sass.svg';
+import { ReactComponent as Upload } from '../../assets/svg/upload.svg';
 import { ReactComponent as Vilnius } from '../../assets/svg/vilnius.svg';
 import { ReactComponent as VSCode } from '../../assets/svg/vscode.svg';
+import { ReactComponent as Web } from '../../assets/svg/web.svg';
 import { ReactComponent as Windows } from '../../assets/svg/windows.svg';
 import { ReactComponent as YouTube } from '../../assets/svg/youtube.svg';
 
-const Icon = props => {
-    switch (props.name) {
+const Icon = ({ name, className }) => {
+    switch (name) {
+        case 'Avatar':
+            return <Avatar className={className} />;
         case 'Chrome':
-            return <Chrome {...props} />;
+            return <Chrome className={className} />;
         case 'Code':
-            return <Code {...props} />;
+            return <Code className={className} />;
         case 'CSS3':
-            return <CSS3 {...props} />;
+            return <CSS3 className={className} />;
         case 'Express':
-            return <Express {...props} />;
+            return <Express className={className} />;
         case 'Facebook':
-            return <Facebook {...props} />;
+            return <Facebook className={className} />;
         case 'GitHub':
-            return <GitHub {...props} />;
+            return <GitHub className={className} />;
         case 'Gmail':
-            return <Gmail {...props} />;
+            return <Gmail className={className} />;
         case 'Handlebars':
-            return <Handlebars {...props} />;
+            return <Handlebars className={className} />;
         case 'HTML5':
-            return <HTML5 {...props} />;
+            return <HTML5 className={className} />;
         case 'JavaScript':
-            return <JavaScript {...props} />;
+            return <JavaScript className={className} />;
         case 'Messenger':
-            return <Messenger {...props} />;
+            return <Messenger className={className} />;
         case 'Mobile':
-            return <Mobile {...props} />;
+            return <Mobile className={className} />;
         case 'MongoDB':
-            return <MongoDB {...props} />;
+            return <MongoDB className={className} />;
         case 'NodeJS':
-            return <NodeJS {...props} />;
+            return <NodeJS className={className} />;
         case 'Photoshop':
-            return <Photoshop {...props} />;
+            return <Photoshop className={className} />;
         case 'ReactJS':
-            return <ReactJS {...props} />;
+            return <ReactJS className={className} />;
         case 'Redux':
-            return <Redux {...props} />;
+            return <Redux className={className} />;
         case 'Sass':
-            return <Sass {...props} />;
+            return <Sass className={className} />;
+        case 'Upload':
+            return <Upload className={className} />;
         case 'Vilnius':
-            return <Vilnius {...props} />;
+            return <Vilnius className={className} />;
         case 'VSCode':
-            return <VSCode {...props} />;
+            return <VSCode className={className} />;
+        case 'Web':
+            return <Web className={className} />;
         case 'Windows':
-            return <Windows {...props} />;
+            return <Windows className={className} />;
         case 'YouTube':
-            return <YouTube {...props} />;
+            return <YouTube className={className} />;
         default:
-            return <Empty {...props} />;
+            return <Empty className={className} />;
     }
 };
 

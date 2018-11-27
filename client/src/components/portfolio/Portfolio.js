@@ -10,21 +10,19 @@ class Portfolio extends Component {
         this.props.getPortfolio();
     }
 
+    portfolioList = works =>
+        works.length > 0 ? (
+            works.map(work => <CardPortfolio key={work._id} work={work} />)
+        ) : (
+            <Spinner />
+        );
+
     render() {
-        const { works, loading } = this.props.portfolio;
-
-        let portfolioContent;
-        if (loading) {
-            portfolioContent = <Spinner />;
-        } else if (works.length === 0) {
-            portfolioContent = <h5>Portfolio is empty</h5>;
-        } else {
-            portfolioContent = works.map(work => (
-                <CardPortfolio key={work._id} work={work} />
-            ));
-        }
-
-        return <section className="portfolio">{portfolioContent}</section>;
+        return (
+            <section className="portfolio">
+                {this.portfolioList(this.props.portfolio.works)}
+            </section>
+        );
     }
 }
 

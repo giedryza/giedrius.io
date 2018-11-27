@@ -1,8 +1,14 @@
-import { GET_PORTFOLIO, ADD_PORTFOLIO, SET_LOADING } from '../actions/types';
+import {
+    GET_PORTFOLIO,
+    ADD_PORTFOLIO,
+    EDIT_PORTFOLIO,
+    DELETE_PORTFOLIO
+} from '../actions/types';
 
 const initialState = {
     works: [],
-    loading: false
+    addPortfolio: {},
+    editPortfolio: {}
 };
 
 export default function(state = initialState, action) {
@@ -10,18 +16,22 @@ export default function(state = initialState, action) {
         case GET_PORTFOLIO:
             return {
                 ...state,
-                works: action.payload,
-                loading: false
+                works: action.payload
             };
         case ADD_PORTFOLIO:
             return {
                 ...state,
-                works: [action.payload, ...state.works]
+                addPortfolio: action.payload
             };
-        case SET_LOADING:
+        case EDIT_PORTFOLIO:
             return {
                 ...state,
-                loading: true
+                editPortfolio: action.payload
+            };
+        case DELETE_PORTFOLIO:
+            return {
+                ...state,
+                works: state.works.filter(work => work._id !== action.payload)
             };
         default:
             return state;

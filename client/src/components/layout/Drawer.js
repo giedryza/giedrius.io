@@ -1,15 +1,9 @@
 import React from 'react';
-
 import Links from './Links';
 
 const Drawer = ({ show, drawerClose }) => {
-    let drawerClass = 'drawer';
-    if (show) {
-        drawerClass = 'drawer open';
-    }
-
     return (
-        <nav className={drawerClass}>
+        <nav className={show ? 'drawer open' : 'drawer'}>
             <Links drawerClose={drawerClose} />
         </nav>
     );

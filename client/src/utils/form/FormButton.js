@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ className, type, value, onClick }) => {
+const FormButton = ({ className, type, value, onClick }) => {
     return (
         <input
             className={className}
@@ -11,8 +11,8 @@ const Button = ({ className, type, value, onClick }) => {
     );
 };
 
-Button.defaultProps = {
+FormButton.defaultProps = {
     className: 'form__button'
 };
 
-export default Button;
+export default FormButton;

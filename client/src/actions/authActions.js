@@ -1,20 +1,23 @@
 import axios from 'axios';
-import setAuthToken from '../utils/setAuthToken';
+import setAuthToken from '../utils/auth/setAuthToken';
 import { AUTH_USER } from './types';
 
-export const login = (userData, callback) => async dispatch => {
+export const login = userData => async dispatch => {
     try {
         const response = await axios.post('/api/users/login', userData);
 
-        dispatch({
-            type: AUTH_USER,
-            payload: response.data.token
-        });
         localStorage.setItem('token', response.data.token);
         setAuthToken(response.data.token);
-        callback();
+
+        dispatch({
+            type: AUTH_USER,
+            payload: response.data
+        });
     } catch (err) {
-        console.log(err);
+        dispatch({
+            type: AUTH_USER,
+            payload: err.response.data
+        });
     }
 };
 
@@ -24,6 +27,6 @@ export const logout = () => {
 
     return {
         type: AUTH_USER,
-        payload: null
+        payload: ''
     };
 };

@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Drawer from './Drawer';
 import Backdrop from './Backdrop';
 
-class Nav extends Component {
+class Layout extends Component {
     state = {
         drawerOpen: false
     };
@@ -16,16 +16,23 @@ class Nav extends Component {
     };
 
     render() {
-        const { drawerOpen } = this.state;
-
         return (
             <>
                 <Navbar drawerToggle={this.drawerToggle} />
-                <Drawer show={drawerOpen} drawerClose={this.drawerToggle} />
-                {drawerOpen && <Backdrop onClick={this.drawerToggle} />}
+
+                <Drawer
+                    show={this.state.drawerOpen}
+                    drawerClose={this.drawerToggle}
+                />
+                <Backdrop
+                    show={this.state.drawerOpen}
+                    onClick={this.drawerToggle}
+                />
+
+                <main>{this.props.children}</main>
             </>
         );
     }
 }
 
-export default Nav;
+export default Layout;

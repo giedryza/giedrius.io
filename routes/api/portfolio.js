@@ -1,9 +1,58 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const formidable = require('express-formidable');
+const cloudinary = require('cloudinary');
 
 // Load Portfolio Model
 const Portfolio = require('../../models/Portfolio');
+
+// Cloudinary config
+const cloud = require('../../config/keys');
+cloudinary.config({
+    cloud_name: cloud.cloudName,
+    api_key: cloud.cloudApiKey,
+    api_secret: cloud.cloudApiSecret
+});
+
+// @route   POST api/portfolio/uploadimage
+// @desc    Upload Image
+// @access  Private
+router.post(
+    '/uploadimage',
+    passport.authenticate('jwt', { session: false }),
+    formidable(),
+    (req, res) => {
+        cloudinary.uploader.upload(
+            req.files.file.path,
+            result => {
+                res.status(200).send({
+                    public_id: result.public_id,
+                    url: result.url
+                });
+            },
+            {
+                public_id: `${Date.now()}`
+            }
+        );
+    }
+);
+
+// @route   POST api/portfolio/removeimage
+// @desc    Remove Image
+// @access  Private
+router.get(
+    '/removeimage',
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        let public_id = req.query.public_id;
+
+        cloudinary.uploader.destroy(public_id, (err, result) => {
+            if (err) return res.json({ success: false, err });
+            res.status(200).send('ok');
+        });
+    }
+);
 
 // @route   POST api/portfolio
 // @desc    Add Portfolio
@@ -12,20 +61,12 @@ router.post(
     '/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        const newPortfolio = new Portfolio({
-            name: req.body.name,
-            img: req.body.img,
-            description: req.body.description,
-            techStack: req.body.techStack.split(','),
-            web: req.body.web,
-            github: req.body.github,
-            youtube: req.body.youtube
-        });
+        const newPortfolio = new Portfolio(req.body);
 
         newPortfolio
             .save()
-            .then(portfolio => res.json(portfolio))
-            .catch(err => res.status(400).json(err));
+            .then(portfolio => res.json({ success: true, portfolio }))
+            .catch(err => res.status(400).json({ success: false, err }));
     }
 );
 
@@ -39,15 +80,6 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json(err));
 });
 
-// @route   GET api/portfolio/:id
-// @desc    Get Portfolio by id
-// @access  Private
-router.get('/:id', (req, res) => {
-    Portfolio.findOne({ _id: req.params.id })
-        .then(portfolio => res.json(portfolio))
-        .catch(err => res.status(404).json(err));
-});
-
 // @route   PATCH api/portfolio/:id
 // @desc    Update Portfolio
 // @access  Private
@@ -55,28 +87,15 @@ router.patch(
     '/:id',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        Portfolio.findOne({ _id: req.params.id })
-            .then(portfolio => {
-                const updatedPortfolio = {
-                    name: req.body.name,
-                    img: req.body.img,
-                    description: req.body.description,
-                    techStack: req.body.techStack.split(','),
-                    web: req.body.web,
-                    github: req.body.github,
-                    youtube: req.body.youtube
-                };
-
-                Portfolio.updateOne(
-                    { _id: req.params.id },
-                    { $set: updatedPortfolio }
-                )
-                    .then(portfolio => res.json(portfolio))
-                    .catch(err => {
-                        res.status(400).json(err);
-                    });
-            })
-            .catch(err => res.status(400).json(err));
+        Portfolio.updateOne(
+            { _id: req.params.id },
+            { $set: req.body },
+            { new: true }
+        )
+            .then(portfolio => res.json({ success: true, portfolio }))
+            .catch(err => {
+                res.status(400).json(err);
+            });
     }
 );
 
@@ -87,12 +106,8 @@ router.delete(
     '/:id',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        Portfolio.findOne({ _id: req.params.id })
-            .then(portfolio => {
-                Portfolio.findOneAndDelete({ _id: req.params.id })
-                    .then(result => res.json({ message: 'Delete successful' }))
-                    .catch(err => res.status(400).json(err));
-            })
+        Portfolio.findOneAndDelete({ _id: req.params.id })
+            .then(result => res.json({ message: 'Delete successful' }))
             .catch(err => res.status(400).json(err));
     }
 );
