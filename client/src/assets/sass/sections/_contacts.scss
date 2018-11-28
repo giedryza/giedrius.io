@@ -1,14 +1,41 @@
 .contacts {
     @include container;
 
-    padding: 2.5rem 0;
+    // padding: 2.5rem 0;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
-    grid-gap: 5rem;
-    align-items: start;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+    // grid-gap: 5rem;
 
-    @media only screen and (max-width: $bp-small) {
-        grid-template-columns: 1fr;
-    }
+    // @media only screen and (max-width: $bp-small) {
+    //     grid-template-columns: 1fr;
+    // }
+
+    width: 95%;
+    max-width: 50rem;
+    margin: 5rem auto;
+
+    // &__balloon {
+    //     background: $color-white;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     position: relative;
+
+    //     &-icon {
+    //         width: 80rem;
+    //         padding: 5rem;
+    //     }
+
+    //     &-text {
+    //         position: absolute;
+    //         top: 50%;
+    //         left: 50%;
+    //         transform: translate(-50%, -70%);
+
+    //         font-size: 3.5rem;
+    //         line-height: 1.2;
+    //         text-align: center;
+    //     }
+    // }
 }

@@ -14,7 +14,7 @@ class AdminLayout extends Component {
             <section className="admin">
                 <div className="admin-left">
                     <Link to="/admin/portfolio" className="admin-right__btn">
-                        Portfolios list
+                        Edit Portfolio
                     </Link>
                     <Link
                         to="/admin/portfolio/add"

@@ -19,6 +19,7 @@ import { ReactComponent as Photoshop } from '../../assets/svg/photoshop.svg';
 import { ReactComponent as ReactJS } from '../../assets/svg/react.svg';
 import { ReactComponent as Redux } from '../../assets/svg/redux.svg';
 import { ReactComponent as Sass } from '../../assets/svg/sass.svg';
+import { ReactComponent as Balloon } from '../../assets/svg/speech-balloon.svg';
 import { ReactComponent as Upload } from '../../assets/svg/upload.svg';
 import { ReactComponent as Vilnius } from '../../assets/svg/vilnius.svg';
 import { ReactComponent as VSCode } from '../../assets/svg/vscode.svg';
@@ -66,6 +67,8 @@ const Icon = ({ name, className }) => {
             return <Redux className={className} />;
         case 'Sass':
             return <Sass className={className} />;
+        case 'Balloon':
+            return <Balloon className={className} />;
         case 'Upload':
             return <Upload className={className} />;
         case 'Vilnius':

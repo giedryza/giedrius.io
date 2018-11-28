@@ -23,23 +23,12 @@ class Landing extends Component {
             <section className="landing">
                 <div className="landing__card">
                     <Icon name="Avatar" className="landing__avatar" />
-                    <h1 className="landing__header">Hello</h1>
-                    <h1 className="landing__text">I am Giedrius Blažulionis</h1>
-                    <h1 className="landing__text">
-                        I am a self-taught{' '}
-                        <span className="landing__span">
-                            front-end web developer
-                        </span>
-                    </h1>
-                    <p className="landing__text mb-2">
-                        And I am available for a job
-                    </p>
 
-                    <PrimaryButton
+                    {/* <PrimaryButton
                         onClick={this.modalToggle}
                         visible="Hire me"
                         invisible="Contacts"
-                    />
+                    /> */}
                 </div>
 
                 {/* <div className="landing__card">

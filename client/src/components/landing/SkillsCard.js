@@ -43,7 +43,20 @@ class SkillsCard extends Component {
 
         return (
             <div className="landing__card">
-                <h4 className="landing__label">SKILLS (beginner)</h4>
+                <h1 className="landing__header">Hello</h1>
+                <h1 className="landing__text">I am Giedrius Blažulionis</h1>
+                <h1 className="landing__text">
+                    I am a self-taught{' '}
+                    <span className="landing__span">
+                        front-end web developer
+                    </span>
+                </h1>
+                <p className="landing__text mb-2">
+                    And I am available for a job
+                </p>
+                <h4 className="landing__label">
+                    SKILLS <p className="landing__label-span">beginner</p>
+                </h4>
                 <div className="card__icons">{beginner}</div>
                 {/* <h4 className="landing__label">TOOLS</h4>
                 <div className="card__icons">{myTools}</div> */}
