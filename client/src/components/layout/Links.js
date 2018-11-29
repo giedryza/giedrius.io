@@ -1,11 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { links } from '../../utils/links';
 
 const Links = ({ drawerClose }) => {
-    const navLinks = links.map(link => (
-        <li className="nav__item" key={link.label}>
+    const links = [
+        { label: 'Portfolio', href: '/portfolio' },
+        { label: 'Contacts', href: '/contacts' }
+    ];
+
+    const renderLinks = () =>
+        links.map(link => (
             <NavLink
+                key={link.label}
                 to={link.href}
                 className="nav__link"
                 activeClassName="nav__selected"
@@ -13,10 +18,9 @@ const Links = ({ drawerClose }) => {
             >
                 {link.label}
             </NavLink>
-        </li>
-    ));
+        ));
 
-    return <ul className="nav__list">{navLinks}</ul>;
+    return <ul className="nav__list">{renderLinks()}</ul>;
 };
 
 export default Links;

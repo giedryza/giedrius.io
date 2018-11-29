@@ -80,6 +80,16 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json(err));
 });
 
+// @route   GET api/portfolio/:type
+// @desc    Get Portfolio by tech
+// @access  Public
+router.get('/:type', (req, res) => {
+    Portfolio.find({ techStack: req.params.type })
+        .sort({ date: -1 })
+        .then(portfolio => res.json(portfolio))
+        .catch(err => res.status(404).json(err));
+});
+
 // @route   PATCH api/portfolio/:id
 // @desc    Update Portfolio
 // @access  Private
