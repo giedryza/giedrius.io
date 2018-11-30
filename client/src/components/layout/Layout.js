@@ -22,8 +22,9 @@ class Layout extends Component {
 
                 <Drawer
                     show={this.state.drawerOpen}
-                    drawerClose={this.drawerToggle}
+                    onClick={this.drawerToggle}
                 />
+
                 <Backdrop
                     show={this.state.drawerOpen}
                     onClick={this.drawerToggle}

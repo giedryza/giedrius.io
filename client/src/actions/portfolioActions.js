@@ -6,9 +6,16 @@ import {
     DELETE_PORTFOLIO
 } from './types';
 
-export const getPortfolio = () => dispatch => {
+export const clearPortfolio = () => {
+    return {
+        type: GET_PORTFOLIO,
+        payload: []
+    };
+};
+
+export const getPortfolio = (tech = '') => dispatch => {
     axios
-        .get('/api/portfolio')
+        .get(`/api/portfolio/${tech}`)
         .then(res =>
             dispatch({
                 type: GET_PORTFOLIO,

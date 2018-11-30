@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Icon from '../common/Icon';
+import IconsContainer from '../common/IconsContainer';
 
 const SkillsCard = () => {
     const skills = {
@@ -19,14 +18,6 @@ const SkillsCard = () => {
         ]
     };
 
-    const renderIcons = level =>
-        level.map(skill => (
-            <Link to="/" key={skill} className="icons__item">
-                <Icon name={skill} className="icons__svg" />
-                <h5 className="icons__label">{skill}</h5>
-            </Link>
-        ));
-
     return (
         <div className="landing__card">
             <h1 className="landing__header">Hello</h1>
@@ -38,7 +29,7 @@ const SkillsCard = () => {
             <p className="landing__text mb-2">And I am available for a job</p>
             <h4 className="landing__label">Skills</h4>
             <p className="landing__label-secondary">beginner</p>
-            <div className="icons">{renderIcons(skills.beginner)}</div>
+            <IconsContainer iconsList={skills.beginner} />
         </div>
     );
 };

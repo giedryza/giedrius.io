@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import IconLink from '../common/IconLink';
-import imgContacts from '../../assets/img/contacts_contacts.png';
 
 class ContactsCard extends Component {
     state = {

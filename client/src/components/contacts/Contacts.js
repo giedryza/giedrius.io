@@ -1,8 +1,6 @@
 import React from 'react';
 
-import SkillsCard from './SkillsCard';
 import ContactsCard from './ContactsCard';
-import Icon from '../common/Icon';
 
 const Contacts = () => {
     return (

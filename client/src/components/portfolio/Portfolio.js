@@ -2,17 +2,29 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Spinner from '../common/Spinner';
-import CardPortfolio from './CardPortfolio';
-import { getPortfolio } from '../../actions/portfolioActions';
+import PortfolioCard from './PortfolioCard';
+import { getPortfolio, clearPortfolio } from '../../actions/portfolioActions';
 
 class Portfolio extends Component {
     componentDidMount() {
-        this.props.getPortfolio();
+        this.props.getPortfolio(this.props.match.params.tech);
     }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params !== this.props.match.params) {
+            this.props.clearPortfolio(
+                this.props.getPortfolio(this.props.match.params.tech)
+            );
+        }
+    }
+
+    componentWillUnmount = () => {
+        this.props.clearPortfolio();
+    };
 
     portfolioList = works =>
         works.length > 0 ? (
-            works.map(work => <CardPortfolio key={work._id} work={work} />)
+            works.map(work => <PortfolioCard key={work._id} work={work} />)
         ) : (
             <Spinner />
         );
@@ -32,5 +44,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { getPortfolio }
+    { getPortfolio, clearPortfolio }
 )(Portfolio);

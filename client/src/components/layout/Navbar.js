@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import MenuButton from './MenuButton';
 import Links from './Links';
-import Icon from '../common/Icon';
 
 const Navbar = ({ drawerToggle }) => (
     <header className="nav">
@@ -11,7 +10,7 @@ const Navbar = ({ drawerToggle }) => (
             Giedrius Blažulionis
         </Link>
 
-        <nav className="navbar">
+        <nav className="nav__bar">
             <Links />
         </nav>
 
