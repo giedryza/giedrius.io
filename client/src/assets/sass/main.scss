@@ -1,16 +1,15 @@
 @import 'abstract/variables';
 @import 'abstract/mixins';
 @import 'abstract/base';
-@import 'abstract/utils';
 
 @import 'components/btn-primary';
 @import 'components/card';
 @import 'components/form';
 @import 'components/icons';
 @import 'components/layout';
+@import 'components/not-found';
 @import 'components/spinner';
 
-@import 'sections/about';
 @import 'sections/admin';
 @import 'sections/contacts';
 @import 'sections/landing';

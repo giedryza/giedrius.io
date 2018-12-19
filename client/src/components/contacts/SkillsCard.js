@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Icon from '../common/Icon';
+import Icon from '../utils/elements/Icon';
 import { contacts } from '../../utils/texts';
 import imgSkills from '../../assets/img/contacts_skills.png';
 

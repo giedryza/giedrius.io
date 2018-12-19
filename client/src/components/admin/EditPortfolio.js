@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import FormButton from '../../utils/form/FormButton';
-import FileUpload from '../../utils/form/FileUpload';
-import FormField from '../../utils/form/FormField';
+import FormButton from '../utils/form/FormButton';
+import FileUpload from '../utils/form/FileUpload';
+import FormField from '../utils/form/FormField';
 import {
     updateField,
     generateData,
     isFormValid,
     populateFields
-} from '../../utils/form/formActions';
+} from '../utils/form/formActions';
 import { editPortfolio } from '../../actions/portfolioActions';
 import AdminLayout from './AdminLayout';
-import requireAuth from '../../utils/auth/requireAuth';
+import requireAuth from '../utils/auth/requireAuth';
 
 class EditPortfolio extends Component {
     state = {
@@ -23,10 +23,12 @@ class EditPortfolio extends Component {
                 element: 'input',
                 value: '',
                 config: {
+                    label: 'name',
                     name: 'name',
                     type: 'text',
                     placeholder: 'name'
                 },
+                showLabel: true,
                 validation: {
                     required: true
                 },
@@ -38,10 +40,12 @@ class EditPortfolio extends Component {
                 element: 'textarea',
                 value: '',
                 config: {
+                    label: 'description',
                     name: 'description',
                     placeholder: 'description',
                     rows: 10
                 },
+                showLabel: true,
                 validation: {
                     required: true
                 },
@@ -53,10 +57,12 @@ class EditPortfolio extends Component {
                 element: 'input',
                 value: '',
                 config: {
+                    label: 'techStack',
                     name: 'techStack',
                     type: 'text',
                     placeholder: 'techStack'
                 },
+                showLabel: true,
                 validation: {
                     required: true
                 },
@@ -68,10 +74,12 @@ class EditPortfolio extends Component {
                 element: 'input',
                 value: '',
                 config: {
+                    label: 'web',
                     name: 'web',
                     type: 'text',
                     placeholder: 'web'
                 },
+                showLabel: true,
                 validation: {
                     required: true
                 },
@@ -83,10 +91,12 @@ class EditPortfolio extends Component {
                 element: 'input',
                 value: '',
                 config: {
+                    label: 'github',
                     name: 'github',
                     type: 'text',
                     placeholder: 'github'
                 },
+                showLabel: true,
                 validation: {
                     required: false
                 },

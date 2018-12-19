@@ -1,13 +1,10 @@
 import React from 'react';
-import Icon from '../common/Icon';
+import AvatarCard from './AvatarCard';
 import SkillsCard from './SkillsCard';
 
 const Landing = () => (
     <section className="landing">
-        <div className="landing__card">
-            <Icon name="Avatar" className="landing__avatar" />
-        </div>
-
+        <AvatarCard />
         <SkillsCard />
     </section>
 );

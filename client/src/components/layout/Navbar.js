@@ -14,7 +14,7 @@ const Navbar = ({ drawerToggle }) => (
             <Links />
         </nav>
 
-        <MenuButton drawerToggle={drawerToggle} />
+        <MenuButton onClick={drawerToggle} />
     </header>
 );
 

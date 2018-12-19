@@ -1,7 +1,7 @@
 import React from 'react';
 
-const MenuButton = ({ drawerToggle }) => (
-    <button className="menu-btn" onClick={drawerToggle}>
+const MenuButton = ({ onClick }) => (
+    <button className="menu-btn" onClick={onClick}>
         <span className="menu-btn--line" />
         <span className="menu-btn--line" />
         <span className="menu-btn--line" />

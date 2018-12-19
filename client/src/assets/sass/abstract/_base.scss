@@ -22,13 +22,13 @@ html {
 }
 
 body {
-    background-color: $color-grey;
     font-family: 'Roboto', sans-serif;
-    color: $color-text;
     line-height: 1.6;
+    background-color: $color-grey;
+    color: $color-text;
 }
 
 ::selection {
-    background-color: darken($color-grey, 5%);
+    background-color: $color-grey-dark;
     color: $color-text;
 }

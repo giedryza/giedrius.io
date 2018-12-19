@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import IconLink from '../common/IconLink';
+import IconLink from '../utils/IconLink';
 
 class ContactsCard extends Component {
     state = {

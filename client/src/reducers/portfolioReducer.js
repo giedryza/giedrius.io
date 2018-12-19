@@ -2,13 +2,15 @@ import {
     GET_PORTFOLIO,
     ADD_PORTFOLIO,
     EDIT_PORTFOLIO,
-    DELETE_PORTFOLIO
+    DELETE_PORTFOLIO,
+    SET_LOADING
 } from '../actions/types';
 
 const initialState = {
     works: [],
     addPortfolio: {},
-    editPortfolio: {}
+    editPortfolio: {},
+    loading: true
 };
 
 export default function(state = initialState, action) {
@@ -16,7 +18,8 @@ export default function(state = initialState, action) {
         case GET_PORTFOLIO:
             return {
                 ...state,
-                works: action.payload
+                works: action.payload,
+                loading: false
             };
         case ADD_PORTFOLIO:
             return {
@@ -32,6 +35,11 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 works: state.works.filter(work => work._id !== action.payload)
+            };
+        case SET_LOADING:
+            return {
+                ...state,
+                loading: action.payload
             };
         default:
             return state;

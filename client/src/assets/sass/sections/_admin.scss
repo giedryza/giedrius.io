@@ -1,11 +1,18 @@
 .admin {
     @include container;
 
-    padding: 5rem 0;
-
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 5rem;
+
+    &-left {
+        padding: 1rem;
+        background: $color-white;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0.5rem;
+        align-content: start;
+    }
 
     &-right {
         background: $color-white;
@@ -20,42 +27,33 @@
         }
 
         &__title {
-            font-size: 1.5rem;
+            font-size: $font-default;
             padding: 0.5rem;
             background: $color-grey;
             grid-column: span 2;
         }
-
-        &__btn {
-            padding: 0.5rem;
-            font-family: inherit;
-            font-size: 1.4rem;
-            font-weight: 400;
-            text-align: center;
-            background-color: $color-grey;
-            border: none;
-            transition: 0.2s ease-out;
-            cursor: pointer;
-
-            &:link,
-            &:visited {
-                text-decoration: none;
-                color: $color-text;
-            }
-
-            &:hover {
-                background-color: darken($color-grey, 5%);
-            }
-        }
     }
 
-    &-left {
-        padding: 1rem;
-        background: $color-white;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 0.5rem;
-        align-content: start;
+    &__btn {
+        padding: 0.5rem;
+        font-family: inherit;
+        font-size: $font-small;
+        font-weight: 400;
+        text-align: center;
+        background-color: $color-grey;
+        border: none;
+        transition: $transition-fast ease-out;
+        cursor: pointer;
+
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: $color-text;
+        }
+
+        &:hover {
+            background-color: $color-grey-dark;
+        }
     }
 }
 
@@ -63,5 +61,5 @@
     background-color: $color-white;
     width: 95%;
     max-width: 50rem;
-    margin: 5rem auto;
+    margin: 2.5rem auto;
 }

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getPortfolio } from '../../actions/portfolioActions';
 
-import Spinner from '../common/Spinner';
-import PortfolioCard from './PortfolioCard';
-import { getPortfolio, clearPortfolio } from '../../actions/portfolioActions';
+import Spinner from '../utils/common/Spinner';
+import NotFound from '../utils/common/NotFound';
+import PortfolioList from './PortfolioList';
 
 class Portfolio extends Component {
     componentDidMount() {
@@ -12,27 +13,20 @@ class Portfolio extends Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params !== this.props.match.params) {
-            this.props.clearPortfolio(
-                this.props.getPortfolio(this.props.match.params.tech)
-            );
+            this.props.getPortfolio(this.props.match.params.tech);
         }
     }
 
-    componentWillUnmount = () => {
-        this.props.clearPortfolio();
+    renderPortfolio = ({ loading, works }) => {
+        if (loading) return <Spinner />;
+        else if (works < 1) return <NotFound />;
+        else return <PortfolioList works={works} />;
     };
-
-    portfolioList = works =>
-        works.length > 0 ? (
-            works.map(work => <PortfolioCard key={work._id} work={work} />)
-        ) : (
-            <Spinner />
-        );
 
     render() {
         return (
             <section className="portfolio">
-                {this.portfolioList(this.props.portfolio.works)}
+                {this.renderPortfolio(this.props.portfolio)}
             </section>
         );
     }
@@ -44,5 +38,5 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { getPortfolio, clearPortfolio }
+    { getPortfolio }
 )(Portfolio);

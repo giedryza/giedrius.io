@@ -3,17 +3,12 @@ import {
     GET_PORTFOLIO,
     ADD_PORTFOLIO,
     EDIT_PORTFOLIO,
-    DELETE_PORTFOLIO
+    DELETE_PORTFOLIO,
+    SET_LOADING
 } from './types';
 
-export const clearPortfolio = () => {
-    return {
-        type: GET_PORTFOLIO,
-        payload: []
-    };
-};
-
 export const getPortfolio = (tech = '') => dispatch => {
+    dispatch(setLoading(true));
     axios
         .get(`/api/portfolio/${tech}`)
         .then(res =>
@@ -68,15 +63,9 @@ export const deletePortfolio = id => dispatch => {
         .catch(err => console.log(err));
 };
 
-// export const addPortfolio = (portfolioData, callback) => async dispatch => {
-//     try {
-//         const response = await axios.post('/api/portfolio', portfolioData);
-//         dispatch({
-//             type: ADD_PORTFOLIO,
-//             payload: response.data
-//         });
-//         callback();
-//     } catch (err) {
-//         console.log(err);
-//     }
-// };
+export const setLoading = bool => {
+    return {
+        type: SET_LOADING,
+        payload: bool
+    };
+};

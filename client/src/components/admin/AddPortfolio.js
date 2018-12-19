@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import FormButton from '../../utils/form/FormButton';
-import FileUpload from '../../utils/form/FileUpload';
-import FormField from '../../utils/form/FormField';
+import FormButton from '../utils/form/FormButton';
+import FileUpload from '../utils/form/FileUpload';
+import FormField from '../utils/form/FormField';
 import {
     updateField,
     generateData,
     isFormValid,
     resetFields
-} from '../../utils/form/formActions';
+} from '../utils/form/formActions';
 import { addPortfolio } from '../../actions/portfolioActions';
 import AdminLayout from './AdminLayout';
-import requireAuth from '../../utils/auth/requireAuth';
+import requireAuth from '../utils/auth/requireAuth';
 
 class AddPortfolio extends Component {
     state = {

@@ -1,10 +1,23 @@
 // COLORS
-
 $color-grey: #eee;
+$color-grey-dark: darken($color-grey, 5%);
+$color-grey-darkest: darken($color-grey, 15%);
+
 $color-white: #fff;
 $color-text: #111;
 $color-orange: #f90;
 $color-error: #dd2c00;
+
+// FONTS
+$font-header: 3.5rem;
+$font-large: 2rem;
+$font-default: 1.6rem;
+$font-small: 1.4rem;
+$font-baby: 1.2rem;
+
+// TRANSITIONS
+$transition-fast: 0.2s;
+$transition-slow: 0.4s;
 
 // RESPONSIVE BREAKPOINTS
 // $bp-large: 62.5em; // 1000px

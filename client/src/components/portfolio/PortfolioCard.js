@@ -2,10 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 
-import Icon from '../common/Icon';
-import IconsContainer from '../common/IconsContainer';
+import Icon from '../utils/elements/Icon';
+import IconsContainer from '../utils/elements/IconsContainer';
 
-const CardPortfolio = ({ work }) => {
+const CardPortfolio = ({
+    name,
+    date,
+    img,
+    techStack,
+    web,
+    github,
+    description
+}) => {
     const renderButton = (name, linkto) => (
         <Link to={linkto} target="_blank" className="card__btn">
             <Icon name={name} className="card__btn-icon" />
@@ -16,20 +24,20 @@ const CardPortfolio = ({ work }) => {
     return (
         <div className="card">
             <div className="card__header">
-                <h3 className="card__title">{work.name}</h3>
-                <p className="card__date">{format(work.date, 'YYYY-MM')}</p>
+                <h3 className="card__title">{name}</h3>
+                <p className="card__date">{format(date, 'YYYY-MM')}</p>
             </div>
 
-            <img src={work.img} alt={work.name} className="card__img" />
+            <img src={img} alt={name} className="card__img" />
 
             <div className="card__details">
                 <div className="card__btn-container">
-                    {renderButton('Web', work.web)}
-                    {renderButton('GitHub', work.github)}
+                    {renderButton('Web', web)}
+                    {renderButton('GitHub', github)}
                 </div>
-                <p className="card__description">{work.description}</p>
+                <p className="card__description">{description}</p>
                 <h4 className="card__title">Tech Stack</h4>
-                <IconsContainer iconsList={work.techStack} />
+                <IconsContainer iconsList={techStack} />
             </div>
         </div>
     );

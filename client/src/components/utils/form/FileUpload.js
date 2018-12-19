@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
-import Spinner from '../../components/common/Spinner';
-import Icon from '../../components/common/Icon';
+import Spinner from '../common/Spinner';
+import Icon from '../elements/Icon';
 
 class FileUpload extends Component {
     state = {

@@ -20,7 +20,7 @@ const Links = ({ drawerClose }) => {
             </NavLink>
         ));
 
-    return <ul className="nav__list">{renderLinks()}</ul>;
+    return <div className="nav__list">{renderLinks()}</div>;
 };
 
 export default Links;

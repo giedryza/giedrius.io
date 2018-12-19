@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import FormButton from '../../utils/form/FormButton';
-import FormField from '../../utils/form/FormField';
+import FormButton from '../utils/form/FormButton';
+import FormField from '../utils/form/FormField';
 import {
     updateField,
     generateData,
     isFormValid
-} from '../../utils/form/formActions';
+} from '../utils/form/formActions';
 import { login } from '../../actions/authActions';
 
 class Login extends Component {

@@ -4,34 +4,44 @@ import { logout } from '../../actions/authActions';
 import { connect } from 'react-redux';
 
 class AdminLayout extends Component {
+    state = {
+        links: [
+            {
+                name: 'Add portfolio',
+                linkto: '/admin/portfolio/add'
+            },
+            {
+                name: 'Edit portfolio',
+                linkto: '/admin/portfolio'
+            },
+            {
+                name: 'Logout',
+                linkto: '/'
+            }
+        ]
+    };
+
     onLogoutClick = e => {
         e.preventDefault();
         this.props.logout();
     };
 
+    renderLinks = () =>
+        this.state.links.map((link, i) => (
+            <Link
+                key={i}
+                to={link.linkto}
+                className="admin__btn"
+                onClick={link.name === 'Logout' ? this.onLogoutClick : null}
+            >
+                {link.name}
+            </Link>
+        ));
+
     render() {
         return (
             <section className="admin">
-                <div className="admin-left">
-                    <Link to="/admin/portfolio" className="admin-right__btn">
-                        Edit Portfolio
-                    </Link>
-                    <Link
-                        to="/admin/portfolio/add"
-                        className="admin-right__btn"
-                    >
-                        Add portfolio
-                    </Link>
-
-                    <a
-                        href="/"
-                        className="admin-right__btn"
-                        onClick={this.onLogoutClick}
-                    >
-                        Logout
-                    </a>
-                </div>
-
+                <div className="admin-left">{this.renderLinks()}</div>
                 <div className="admin-right">{this.props.children}</div>
             </section>
         );

@@ -3,7 +3,6 @@
 
     width: 95%;
     max-width: 50rem;
-    margin: 2.5rem auto;
 }
 
 .card__icons--contacts {
@@ -43,7 +42,7 @@
 
         background-color: $color-grey;
         padding: 1rem;
-        transition: background-color 0.4s;
+        transition: background-color $transition-slow;
 
         &:link,
         &:visited {
@@ -54,7 +53,7 @@
         &:hover,
         &:active {
             cursor: pointer;
-            background-color: darken($color-grey, 15%);
+            background-color: $color-grey-darkest;
         }
 
         &--contacts {
@@ -81,7 +80,7 @@
     }
 
     &__icon-title {
-        font-size: 1.4rem;
+        font-size: $font-small;
         font-weight: 500;
     }
 }

@@ -1,6 +1,5 @@
 .landing {
     @include container;
-    padding: 2.5rem 0;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
@@ -25,23 +24,24 @@
     }
 
     &__header {
-        font-size: 3.5rem;
+        font-size: $font-header;
         text-transform: uppercase;
     }
 
     &__text {
-        font-size: 1.6rem;
+        font-size: $font-default;
         font-weight: 400;
         text-align: center;
     }
 
     &__label {
-        font-size: 1.6rem;
+        font-size: $font-default;
         font-weight: 500;
         text-transform: uppercase;
+        margin-top: 2.5rem;
 
         &-secondary {
-            font-size: 1.4rem;
+            font-size: $font-small;
             font-weight: 300;
             line-height: 1;
             text-transform: uppercase;

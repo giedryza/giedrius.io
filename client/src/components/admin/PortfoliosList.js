@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import requireAuth from '../../utils/auth/requireAuth';
+import requireAuth from '../utils/auth/requireAuth';
 import AdminLayout from './AdminLayout';
 import PortfolioItem from './PortfolioItem';
 
-import Spinner from '../common/Spinner';
+import Spinner from '../utils/common/Spinner';
 import { getPortfolio, deletePortfolio } from '../../actions/portfolioActions';
 
 class PortfoliosList extends Component {

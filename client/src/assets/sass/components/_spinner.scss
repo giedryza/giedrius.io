@@ -3,7 +3,7 @@
     width: 5rem;
     margin: 2.5rem auto;
     border-radius: 50%;
-    border-top: 5px solid #000;
+    border-top: 5px solid $color-text;
     border-right: 5px solid transparent;
     animation: spinner 0.75s linear infinite;
 }

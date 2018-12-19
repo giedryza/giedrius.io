@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../common/Icon';
+import Icon from './elements/Icon';
 
 const IconLink = ({
     href,
