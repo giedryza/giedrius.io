@@ -3,7 +3,7 @@
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
-    grid-gap: 5rem;
+    grid-gap: $card-gap;
 
     @media only screen and (max-width: $bp-small) {
         grid-template-columns: 1fr;
@@ -30,7 +30,7 @@
 
     &__text {
         font-size: $font-default;
-        font-weight: 400;
+        font-weight: 300;
         text-align: center;
     }
 

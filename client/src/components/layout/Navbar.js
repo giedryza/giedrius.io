@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import MenuButton from './MenuButton';
+import Hamburger from './Hamburger';
 import Links from './Links';
 
 const Navbar = ({ drawerToggle }) => (
@@ -14,7 +14,7 @@ const Navbar = ({ drawerToggle }) => (
             <Links />
         </nav>
 
-        <MenuButton onClick={drawerToggle} />
+        <Hamburger onClick={drawerToggle} />
     </header>
 );
 

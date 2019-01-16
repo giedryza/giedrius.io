@@ -1,86 +1,63 @@
 .contacts {
     @include container;
 
-    width: 95%;
-    max-width: 50rem;
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+    grid-gap: $card-gap;
 
-.card__icons--contacts {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-}
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: 1fr;
+    }
 
-.card__icon--container--contacts {
-    flex-direction: row;
-    justify-content: start;
-    padding: 0;
-}
+    &__card {
+        background-color: $color-white;
+        text-align: center;
+    }
 
-.card__icon--contacts {
-    padding: 2rem;
-    width: 7rem;
-    height: 7rem;
-}
+    &__city {
+        max-width: 20rem;
+        max-height: 20rem;
+        margin: 4rem;
+    }
 
-.card {
     &__icons {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+        grid-template-columns: 1fr;
         grid-gap: 1rem;
-
-        &--contacts {
-            grid-template-columns: 1fr;
-            padding: 1rem;
-        }
-    }
-
-    &__icon-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        background-color: $color-grey;
         padding: 1rem;
-        transition: background-color $transition-slow;
 
-        &:link,
-        &:visited {
-            color: $color-text;
-            text-decoration: none;
+        &--item {
+            display: flex;
+            align-items: center;
+            background-color: $color-grey;
+            transition: $transition-slow background-color;
+
+            &:link,
+            &:visited {
+                color: $color-text;
+                text-decoration: none;
+            }
+
+            &:hover,
+            &:active {
+                cursor: pointer;
+                background-color: $color-grey-darkest;
+            }
         }
 
-        &:hover,
-        &:active {
-            cursor: pointer;
-            background-color: $color-grey-darkest;
+        &--item:hover &--svg {
+            filter: blur(1px);
         }
 
-        &--contacts {
-            flex-direction: row;
-            justify-content: start;
-            padding: 0;
-        }
-    }
-
-    &__icon-container:hover &__icon {
-        filter: blur(1px);
-    }
-
-    &__icon {
-        padding: 1rem;
-        width: 7.5rem;
-        height: 7.5rem;
-
-        &--contacts {
+        &--svg {
             padding: 2rem;
             width: 7rem;
             height: 7rem;
         }
-    }
 
-    &__icon-title {
-        font-size: $font-small;
-        font-weight: 500;
+        &--label {
+            font-size: $font-small;
+            font-weight: 500;
+        }
     }
 }

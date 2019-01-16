@@ -1,0 +1,20 @@
+.drawer {
+    display: none;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: block;
+        width: 95%;
+        max-width: 125rem;
+        background-color: $color-white;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        z-index: 15;
+        transform: translate(-50%, -100%);
+        transition: transform $transition-fast ease-out;
+
+        &.open {
+            transform: translate(-50%, 0);
+        }
+    }
+}

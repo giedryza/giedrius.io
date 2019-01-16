@@ -1,61 +1,45 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import IconLink from '../utils/IconLink';
+import Icon from '../utils/elements/Icon';
 
-class ContactsCard extends Component {
-    state = {
-        contacts: [
-            {
-                label: 'giedrius.bla@gmail.com',
-                icon: 'Gmail',
-                link: 'mailto:giedrius.bla@gmail.com'
-            },
-            {
-                label: 'm.me/giedrius.io',
-                icon: 'Messenger',
-                link: 'https://m.me/giedrius.io'
-            },
-            {
-                label: 'fb.com/giedrius.io',
-                icon: 'Facebook',
-                link: 'https://www.facebook.com/giedrius.io'
-            },
-            {
-                label: '370 604 10158',
-                icon: 'Mobile',
-                link: 'tel:+37060410158'
-            },
-            {
-                label: 'Vilnius',
-                icon: 'Vilnius',
-                link: 'https://goo.gl/maps/xXB8utSLNJU2'
-            }
-        ]
-    };
+const ContactsCard = () => {
+    const contacts = [
+        {
+            label: 'giedrius.bla@gmail.com',
+            icon: 'Gmail',
+            link: 'mailto:giedrius.bla@gmail.com'
+        },
+        {
+            label: 'fb.com/giedrius.io',
+            icon: 'Facebook',
+            link: '//www.facebook.com/giedrius.io'
+        },
+        {
+            label: '370 604 10158',
+            icon: 'Mobile',
+            link: 'tel:+37060410158'
+        }
+    ];
 
-    render() {
-        const { contacts } = this.state;
-
-        const myContacts = contacts.map(contact => (
-            <IconLink
+    const renderContacts = () =>
+        contacts.map(contact => (
+            <Link
+                to={contact.link}
                 key={contact.icon}
-                href={contact.link}
-                className="card__icon-container card__icon-container--contacts"
-                iconName={contact.icon}
-                iconClassName="card__icon--contacts"
-                label={contact.label}
-            />
+                className="contacts__icons--item"
+                target="_blank"
+            >
+                <Icon name={contact.icon} className="contacts__icons--svg" />
+                <h5 className="contacts__icons--label">{contact.label}</h5>
+            </Link>
         ));
 
-        return (
-            <div className="card">
-                {/* <h3 className="card__title">Let's get in touch</h3> */}
-                <div className="card__icons card__icons--contacts">
-                    {myContacts}
-                </div>
-            </div>
-        );
-    }
-}
+    return (
+        <div className="contacts__card">
+            <div className="contacts__icons">{renderContacts()}</div>
+        </div>
+    );
+};
 
 export default ContactsCard;

@@ -12,7 +12,7 @@
 
         padding: 1rem;
         background-color: $color-grey;
-        transition: background-color $transition-slow;
+        transition: $transition-slow background-color;
 
         &:link,
         &:visited {

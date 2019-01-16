@@ -1,0 +1,48 @@
+.nav {
+    @include container;
+
+    background-color: $color-white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__bar {
+        @media only screen and (max-width: $bp-medium) {
+            display: none;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+
+        @media only screen and (max-width: $bp-medium) {
+            flex-direction: column;
+        }
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            padding: 1rem;
+            font-size: $font-small;
+            font-weight: 700;
+            color: $color-text;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all $transition-slow;
+
+            @media only screen and (max-width: $bp-medium) {
+                font-size: $font-large;
+                text-align: center;
+            }
+        }
+
+        &:hover,
+        &:active,
+        &-selected {
+            background-color: $color-grey-dark;
+        }
+    }
+}
