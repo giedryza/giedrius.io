@@ -13,6 +13,9 @@ const SkillsCard = () => {
             'NodeJS',
             'Express',
             'MongoDB',
+            'PHP',
+            'Laravel',
+            'MySQL',
             'Handlebars'
         ]
     };

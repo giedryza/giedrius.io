@@ -9,9 +9,12 @@ import { ReactComponent as Gmail } from '../../../assets/svg/gmail.svg';
 import { ReactComponent as Handlebars } from '../../../assets/svg/handlebars.svg';
 import { ReactComponent as HTML5 } from '../../../assets/svg/html5.svg';
 import { ReactComponent as JavaScript } from '../../../assets/svg/javascript.svg';
+import { ReactComponent as Laravel } from '../../../assets/svg/laravel.svg';
 import { ReactComponent as Mobile } from '../../../assets/svg/mobile.svg';
 import { ReactComponent as MongoDB } from '../../../assets/svg/mongodb.svg';
+import { ReactComponent as MySQL } from '../../../assets/svg/mysql.svg';
 import { ReactComponent as NodeJS } from '../../../assets/svg/node.svg';
+import { ReactComponent as PHP } from '../../../assets/svg/php.svg';
 import { ReactComponent as ReactJS } from '../../../assets/svg/react.svg';
 import { ReactComponent as Redux } from '../../../assets/svg/redux.svg';
 import { ReactComponent as Sass } from '../../../assets/svg/sass.svg';
@@ -39,12 +42,18 @@ const Icon = ({ name, className }) => {
             return <HTML5 className={className} />;
         case 'JavaScript':
             return <JavaScript className={className} />;
+        case 'Laravel':
+            return <Laravel className={className} />;
         case 'Mobile':
             return <Mobile className={className} />;
         case 'MongoDB':
             return <MongoDB className={className} />;
+        case 'MySQL':
+            return <MySQL className={className} />;
         case 'NodeJS':
             return <NodeJS className={className} />;
+        case 'PHP':
+            return <PHP className={className} />;
         case 'ReactJS':
             return <ReactJS className={className} />;
         case 'Redux':
