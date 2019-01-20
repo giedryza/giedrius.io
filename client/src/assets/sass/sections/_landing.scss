@@ -3,7 +3,7 @@
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
-    grid-gap: $card-gap;
+    grid-gap: $gap-outer;
 
     @media only screen and (max-width: $bp-small) {
         grid-template-columns: 1fr;
@@ -11,7 +11,7 @@
 
     &__card {
         background-color: $color-white;
-        padding: 2.5rem;
+        padding: $gap-inner;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -29,13 +29,13 @@
     }
 
     &__text {
-        font-size: $font-default;
+        font-size: $font-medium;
         font-weight: 300;
         text-align: center;
     }
 
     &__label {
-        font-size: $font-default;
+        font-size: $font-medium;
         font-weight: 500;
         text-transform: uppercase;
         margin-top: 2.5rem;

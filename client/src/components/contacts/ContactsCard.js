@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Icon from '../utils/elements/Icon';
 
@@ -24,15 +23,16 @@ const ContactsCard = () => {
 
     const renderContacts = () =>
         contacts.map(contact => (
-            <Link
-                to={contact.link}
+            <a
+                href={contact.link}
                 key={contact.icon}
                 className="contacts__icons--item"
                 target="_blank"
+                rel="noopener noreferrer"
             >
                 <Icon name={contact.icon} className="contacts__icons--svg" />
                 <h5 className="contacts__icons--label">{contact.label}</h5>
-            </Link>
+            </a>
         ));
 
     return (

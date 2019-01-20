@@ -5,13 +5,12 @@ $color-grey-darkest: darken($color-grey, 15%);
 
 $color-white: #fff;
 $color-text: #111;
-$color-orange: #f90;
 $color-error: #dd2c00;
 
 // FONTS
 $font-header: 3.5rem;
 $font-large: 2rem;
-$font-default: 1.6rem;
+$font-medium: 1.6rem;
 $font-small: 1.4rem;
 $font-baby: 1.2rem;
 
@@ -19,10 +18,10 @@ $font-baby: 1.2rem;
 $transition-fast: 0.2s;
 $transition-slow: 0.4s;
 
-// RESPONSIVE BREAKPOINTS
-// $bp-large: 62.5em; // 1000px
+// BREAKPOINTS
 $bp-medium: 40em; // 640px
 $bp-small: 25em; // 400px
 
-// GAP
-$card-gap: 2.5rem;
+// GAPS
+$gap-outer: 2.5rem;
+$gap-inner: 1rem;

@@ -1,5 +1,5 @@
 @mixin container {
     width: 95%;
     max-width: 124rem;
-    margin: $card-gap auto;
+    margin: $gap-outer auto;
 }

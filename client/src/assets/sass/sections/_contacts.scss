@@ -3,7 +3,7 @@
 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
-    grid-gap: $card-gap;
+    grid-gap: $gap-outer;
 
     @media only screen and (max-width: $bp-small) {
         grid-template-columns: 1fr;
@@ -11,20 +11,23 @@
 
     &__card {
         background-color: $color-white;
-        text-align: center;
+        padding: $gap-inner;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     &__city {
         max-width: 20rem;
         max-height: 20rem;
-        margin: 4rem;
     }
 
     &__icons {
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 1rem;
-        padding: 1rem;
+        grid-gap: $gap-inner;
+        width: 100%;
 
         &--item {
             display: flex;

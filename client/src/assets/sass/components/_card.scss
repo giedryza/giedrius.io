@@ -1,6 +1,6 @@
 .card {
     background-color: $color-white;
-    font-size: $font-default;
+    font-size: $font-medium;
 
     &__header {
         padding: 1rem;
@@ -25,14 +25,14 @@
 
     &__details {
         display: grid;
-        grid-gap: 1rem;
-        padding: 1rem;
+        grid-gap: $gap-inner;
+        padding: $gap-inner;
     }
 
     &__btn-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-        grid-gap: 1rem;
+        grid-gap: $gap-inner;
     }
 
     &__btn {

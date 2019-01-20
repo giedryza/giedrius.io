@@ -3,7 +3,7 @@
     flex-direction: column;
 
     &__block {
-        padding: 1rem;
+        padding: $gap-inner;
     }
 
     &__input {
@@ -29,7 +29,7 @@
         &-container {
             display: flex;
             align-items: center;
-            margin: 1rem;
+            margin: $gap-inner;
         }
 
         &-preview {
@@ -57,14 +57,14 @@
         color: $color-error;
         font-size: $font-baby;
         font-weight: 700;
-        margin-left: 1rem;
+        margin-left: $gap-inner;
     }
 
     &__button {
-        margin: 1rem;
+        margin: $gap-inner;
         padding: 1rem;
         font-family: inherit;
-        font-size: $font-default;
+        font-size: $font-medium;
         font-weight: 700;
         background-color: $color-grey;
         border: none;
