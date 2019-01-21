@@ -9,18 +9,19 @@ const Links = ({ drawerClose }) => {
 
     const renderLinks = () =>
         links.map(link => (
-            <NavLink
-                key={link.label}
-                to={link.linkto}
-                className="nav__link"
-                activeClassName="nav__link-selected"
-                onClick={drawerClose}
-            >
-                {link.label}
-            </NavLink>
+            <li key={link.label}>
+                <NavLink
+                    to={link.linkto}
+                    className="nav__link"
+                    activeClassName="nav__link--selected"
+                    onClick={drawerClose}
+                >
+                    {link.label}
+                </NavLink>
+            </li>
         ));
 
-    return <div className="nav__list">{renderLinks()}</div>;
+    return <ul className="nav__list">{renderLinks()}</ul>;
 };
 
 export default Links;

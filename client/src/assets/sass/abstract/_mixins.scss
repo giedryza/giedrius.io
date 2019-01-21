@@ -3,3 +3,24 @@
     max-width: 124rem;
     margin: $gap-outer auto;
 }
+
+@mixin cards-grid-cols-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+    grid-gap: $gap-outer;
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: 1fr;
+    }
+}
+
+@mixin cards-grid-cols-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+    grid-gap: $gap-outer;
+    align-items: start;
+
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,5 +1,5 @@
 .card {
-    background-color: $color-white;
+    background: $color-white;
     font-size: $font-medium;
 
     &__header {
@@ -40,19 +40,22 @@
         align-items: center;
         justify-content: center;
 
-        color: $color-text;
-        text-decoration: none;
-        font-weight: 500;
-        background-color: $color-grey;
-        transition: background-color $transition-fast;
+        &:link,
+        &:visited {
+            color: $color-text;
+            font-weight: 500;
+            text-decoration: none;
+            background: $color-grey;
+            cursor: pointer;
+            transition: $transition-fast all;
+        }
 
         &:hover,
         &:active {
-            cursor: pointer;
-            background-color: $color-grey-darkest;
+            background: $color-grey-darkest;
         }
 
-        &-icon {
+        &--icon {
             padding: 0.5rem;
             margin: 0.3rem;
             width: 3rem;
@@ -64,5 +67,6 @@
     &__description {
         font-size: $font-small;
         font-weight: 400;
+        text-align: justify;
     }
 }

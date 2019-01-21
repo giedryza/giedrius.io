@@ -7,9 +7,9 @@ const PortfolioItem = ({ work, deleteHandler }) => (
         <Link to={`/admin/portfolio/${work._id}`} className="admin__btn">
             Edit
         </Link>
-        <div onClick={() => deleteHandler(work._id)} className="admin__btn">
+        <button onClick={() => deleteHandler(work._id)} className="admin__btn">
             Delete
-        </div>
+        </button>
     </div>
 );
 

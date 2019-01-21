@@ -5,6 +5,7 @@
 ::after {
     margin: 0;
     padding: 0;
+    list-style: none;
     box-sizing: inherit;
 }
 
@@ -15,20 +16,16 @@ html {
     @media only screen and (max-width: $bp-medium) {
         font-size: 56.25%; // 9px
     }
-
-    @media only screen and (max-width: $bp-small) {
-        font-size: 50%; // 8px
-    }
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: $color-text;
-    background-color: $color-grey;
+    background: $color-grey;
 }
 
 ::selection {
-    background-color: $color-grey-dark;
+    background: $color-grey-dark;
     color: $color-text;
 }

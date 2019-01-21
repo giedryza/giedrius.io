@@ -16,13 +16,13 @@ const CardPortfolio = ({
 }) => {
     const renderButton = (name, linkto) => (
         <Link to={linkto} target="_blank" className="card__btn">
-            <Icon name={name} className="card__btn-icon" />
+            <Icon name={name} className="card__btn--icon" />
             {name}
         </Link>
     );
 
     return (
-        <div className="card">
+        <article className="card">
             <div className="card__header">
                 <h3 className="card__title">{name}</h3>
                 <p className="card__date">{format(date, 'YYYY-MM')}</p>
@@ -39,7 +39,7 @@ const CardPortfolio = ({
                 <h4 className="card__title">Tech Stack</h4>
                 <IconsContainer iconsList={techStack} />
             </div>
-        </div>
+        </article>
     );
 };
 

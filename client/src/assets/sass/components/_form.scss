@@ -18,7 +18,7 @@
         display: inline-block;
         font-size: $font-small;
         font-weight: 700;
-        background-color: $color-grey;
+        background: $color-grey;
         padding: 0.5rem;
         margin-bottom: 0.5rem;
     }
@@ -44,11 +44,11 @@
             height: 10rem;
             padding: 1.5rem;
             cursor: pointer;
-            background-color: $color-grey;
+            background: $color-grey;
             transition: $transition-fast ease-out;
 
             &:hover {
-                background-color: $color-grey-dark;
+                background: $color-grey-dark;
             }
         }
     }
@@ -66,20 +66,17 @@
         font-family: inherit;
         font-size: $font-medium;
         font-weight: 700;
-        background-color: $color-grey;
+        text-align: center;
+        text-decoration: none;
+        color: $color-text;
+        background: $color-grey;
         border: none;
         transition: $transition-fast ease-out;
         cursor: pointer;
 
-        &:link,
-        &:visited {
-            text-align: center;
-            text-decoration: none;
-            color: $color-text;
-        }
-
-        &:hover {
-            background-color: $color-grey-dark;
+        &:hover,
+        &:active {
+            background: $color-grey-dark;
         }
     }
 }

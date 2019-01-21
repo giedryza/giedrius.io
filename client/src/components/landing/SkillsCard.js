@@ -21,7 +21,7 @@ const SkillsCard = () => {
     };
 
     return (
-        <div className="landing__card">
+        <article className="landing__card">
             <h1 className="landing__header">Hello</h1>
             <h1 className="landing__text">I am Giedrius Blažulionis</h1>
             <h1 className="landing__text">
@@ -32,7 +32,7 @@ const SkillsCard = () => {
             <h4 className="landing__label">Skills</h4>
             <p className="landing__label-secondary">beginner</p>
             <IconsContainer iconsList={skills.beginner} />
-        </div>
+        </article>
     );
 };
 

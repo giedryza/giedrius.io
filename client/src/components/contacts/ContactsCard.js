@@ -23,22 +23,26 @@ const ContactsCard = () => {
 
     const renderContacts = () =>
         contacts.map(contact => (
-            <a
-                href={contact.link}
-                key={contact.icon}
-                className="contacts__icons--item"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <Icon name={contact.icon} className="contacts__icons--svg" />
-                <h5 className="contacts__icons--label">{contact.label}</h5>
-            </a>
+            <li key={contact.icon}>
+                <a
+                    href={contact.link}
+                    className="contacts__icons--item"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Icon
+                        name={contact.icon}
+                        className="contacts__icons--svg"
+                    />
+                    <h5 className="contacts__icons--label">{contact.label}</h5>
+                </a>
+            </li>
         ));
 
     return (
-        <div className="contacts__card">
-            <div className="contacts__icons">{renderContacts()}</div>
-        </div>
+        <article className="contacts__card">
+            <ul className="contacts__icons">{renderContacts()}</ul>
+        </article>
     );
 };
 

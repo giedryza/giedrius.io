@@ -19,7 +19,6 @@
 
         &__item {
             padding: $gap-inner;
-
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: 0.5rem;
@@ -40,25 +39,21 @@
         font-size: $font-small;
         font-weight: 400;
         text-align: center;
-        background-color: $color-grey;
+        text-decoration: none;
+        color: $color-text;
+        background: $color-grey;
         border: none;
         transition: $transition-fast ease-out;
         cursor: pointer;
 
-        &:link,
-        &:visited {
-            text-decoration: none;
-            color: $color-text;
-        }
-
         &:hover {
-            background-color: $color-grey-dark;
+            background: $color-grey-dark;
         }
     }
 }
 
 .login {
-    background-color: $color-white;
+    background: $color-white;
     width: 95%;
     max-width: 50rem;
     margin: 2.5rem auto;
