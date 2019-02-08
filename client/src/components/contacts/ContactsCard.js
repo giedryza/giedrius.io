@@ -15,6 +15,11 @@ const ContactsCard = () => {
             link: '//www.facebook.com/giedrius.io'
         },
         {
+            label: 'in/giedrius-blazulionis',
+            icon: 'LinkedIn',
+            link: '//www.linkedin.com/in/giedrius-blazulionis/'
+        },
+        {
             label: '370 604 10158',
             icon: 'Mobile',
             link: 'tel:+37060410158'

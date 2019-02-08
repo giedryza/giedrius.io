@@ -10,6 +10,7 @@ import { ReactComponent as Handlebars } from '../../../assets/svg/handlebars.svg
 import { ReactComponent as HTML5 } from '../../../assets/svg/html5.svg';
 import { ReactComponent as JavaScript } from '../../../assets/svg/javascript.svg';
 import { ReactComponent as Laravel } from '../../../assets/svg/laravel.svg';
+import { ReactComponent as LinkedIn } from '../../../assets/svg/linkedin.svg';
 import { ReactComponent as Mobile } from '../../../assets/svg/mobile.svg';
 import { ReactComponent as MongoDB } from '../../../assets/svg/mongodb.svg';
 import { ReactComponent as MySQL } from '../../../assets/svg/mysql.svg';
@@ -44,6 +45,8 @@ const Icon = ({ name, className }) => {
             return <JavaScript className={className} />;
         case 'Laravel':
             return <Laravel className={className} />;
+        case 'LinkedIn':
+            return <LinkedIn className={className} />;
         case 'Mobile':
             return <Mobile className={className} />;
         case 'MongoDB':
