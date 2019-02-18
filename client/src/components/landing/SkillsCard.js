@@ -3,21 +3,8 @@ import IconsContainer from '../utils/elements/IconsContainer';
 
 const SkillsCard = () => {
     const skills = {
-        beginner: [
-            'HTML5',
-            'CSS3',
-            'Sass',
-            'JavaScript',
-            'ReactJS',
-            'Redux',
-            'NodeJS',
-            'Express',
-            'MongoDB',
-            'PHP',
-            'Laravel',
-            'MySQL',
-            'Handlebars'
-        ]
+        intermediate: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'ReactJS'],
+        basic: ['Redux', 'NodeJS', 'Express', 'MongoDB', 'PHP', 'Laravel', 'MySQL', 'Handlebars']
     };
 
     return (
@@ -30,8 +17,11 @@ const SkillsCard = () => {
             </h1>
             <p className="landing__text">And I am available for a job</p>
             <h4 className="landing__label">Skills</h4>
-            <p className="landing__label-secondary">beginner</p>
-            <IconsContainer iconsList={skills.beginner} />
+
+            <p className="landing__label--secondary">intermediate</p>
+            <IconsContainer iconsList={skills.intermediate} />
+            <p className="landing__label--secondary">basic</p>
+            <IconsContainer iconsList={skills.basic} />
         </article>
     );
 };
