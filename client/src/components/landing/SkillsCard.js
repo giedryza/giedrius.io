@@ -4,7 +4,7 @@ import IconsContainer from '../utils/elements/IconsContainer';
 const SkillsCard = () => {
     const skills = {
         intermediate: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'ReactJS'],
-        basic: ['Redux', 'NodeJS', 'Express', 'MongoDB', 'PHP', 'Laravel', 'MySQL', 'Handlebars']
+        basic: ['Redux', 'NodeJS', 'Express', 'MongoDB', 'PHP', 'Laravel', 'MySQL']
     };
 
     return (
