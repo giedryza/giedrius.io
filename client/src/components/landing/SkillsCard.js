@@ -7,6 +7,20 @@ const SkillsCard = () => {
         basic: ['Redux', 'NodeJS', 'Express', 'MongoDB', 'PHP', 'Laravel', 'MySQL']
     };
 
+    const renderSkills = () => {
+        const levels = [];
+        for (let key in skills) {
+            levels.push(key);
+        }
+
+        return levels.map(level => (
+            <React.Fragment key={level}>
+                <p className="landing__label--secondary">{level}</p>
+                <IconsContainer iconsList={skills[level]} />
+            </React.Fragment>
+        ));
+    };
+
     return (
         <article className="landing__card">
             <h1 className="landing__header">Hello</h1>
@@ -18,10 +32,7 @@ const SkillsCard = () => {
             <p className="landing__text">And I am available for a job</p>
             <h4 className="landing__label">Skills</h4>
 
-            <p className="landing__label--secondary">intermediate</p>
-            <IconsContainer iconsList={skills.intermediate} />
-            <p className="landing__label--secondary">basic</p>
-            <IconsContainer iconsList={skills.basic} />
+            {renderSkills()}
         </article>
     );
 };
