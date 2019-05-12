@@ -1,60 +1,63 @@
 .contacts {
-    @include container;
+  @include container;
 
-    @include cards-grid-cols-2;
+  @include cards-grid-cols-2;
 
-    &__card {
-        background: $color-white;
-        padding: $gap-inner;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  &__card {
+    background: $color-white;
+    padding: $gap-inner;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__city {
+    display: block;
+    width: 20rem;
+    height: 20rem;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__icons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $gap-inner;
+
+    &--item {
+      display: flex;
+      align-items: center;
+      background: $color-grey;
+      cursor: pointer;
+      transition: $transition-slow all;
+
+      &:link,
+      &:visited {
+        color: $color-text;
+        text-decoration: none;
+      }
+
+      &:hover,
+      &:active {
+        background: $color-grey-darkest;
+      }
     }
 
-    &__city {
-        max-width: 20rem;
-        max-height: 20rem;
+    &--item:hover &--svg {
+      filter: blur(1px);
     }
 
-    &__icons {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: $gap-inner;
-
-        &--item {
-            display: flex;
-            align-items: center;
-            background: $color-grey;
-            cursor: pointer;
-            transition: $transition-slow all;
-
-            &:link,
-            &:visited {
-                color: $color-text;
-                text-decoration: none;
-            }
-
-            &:hover,
-            &:active {
-                background: $color-grey-darkest;
-            }
-        }
-
-        &--item:hover &--svg {
-            filter: blur(1px);
-        }
-
-        &--svg {
-            padding: 2rem;
-            width: 7rem;
-            height: 7rem;
-        }
-
-        &--label {
-            font-size: $font-small;
-            font-weight: 500;
-        }
+    &--svg {
+      padding: 2rem;
+      width: 7rem;
+      height: 7rem;
     }
+
+    &--label {
+      font-size: $font-small;
+      font-weight: 500;
+    }
+  }
 }

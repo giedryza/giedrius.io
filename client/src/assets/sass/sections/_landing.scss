@@ -1,45 +1,48 @@
 .landing {
-    @include container;
+  @include container;
 
-    @include cards-grid-cols-2;
+  @include cards-grid-cols-2;
 
-    &__card {
-        background: $color-white;
-        padding: $gap-inner;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  &__card {
+    background: $color-white;
+    padding: $gap-inner;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__avatar {
+    display: block;
+    width: 45rem;
+    height: 45rem;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__header {
+    font-size: $font-header;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: $font-medium;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  &__label {
+    font-size: $font-medium;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 2.5rem 0 -1.5rem 0;
+
+    &--secondary {
+      font-size: $font-small;
+      font-weight: 300;
+      line-height: 1;
+      text-transform: uppercase;
+      margin: 2rem 0 1rem 0;
     }
-
-    &__avatar {
-        max-width: 45rem;
-        max-height: 45rem;
-    }
-
-    &__header {
-        font-size: $font-header;
-        text-transform: uppercase;
-    }
-
-    &__text {
-        font-size: $font-medium;
-        font-weight: 300;
-        text-align: center;
-    }
-
-    &__label {
-        font-size: $font-medium;
-        font-weight: 500;
-        text-transform: uppercase;
-        margin: 2.5rem 0 -1.5rem 0;
-
-        &--secondary {
-            font-size: $font-small;
-            font-weight: 300;
-            line-height: 1;
-            text-transform: uppercase;
-            margin: 2rem 0 1rem 0;
-        }
-    }
+  }
 }
